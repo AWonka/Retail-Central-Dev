@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+:root {
+    --space: #33393f;
+    --fade: #b9bbbd;
+    --gin: #e0eae4;
+}
+
+body {
+    background-color: var(--fade);
+    
+}
+
+.main {
+    background-color: white;
+    max-width: fit-content;
+    margin: 15px auto 15px;
+}
+
+header {
+    text-align: center;
+}
+
+.retail-header {
+    min-width: 250px;
+    max-width: 100%;
+    width: auto;
+    padding: 20px;
+}
+
+.title {
+    font-family: sans-serif;
+    color: gray;
+    font-size: 2rem;
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card-column {
+    padding: 15px;
+    max-width: 100%;
+    width: auto;
+}
+
+.customers {
+    max-width: 100%;
+}
+
+.customers:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.down-arrows {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container {
+    margin: auto;
+    max-width: fit-content;
+}
+
+.team-lead {
+    display: flex;
+    background: var(--fade);
+}
+
+.lead-img {
+    padding: 10px;
+}
+
+.lead-details {
+    padding-top: 10px;
+    line-height: 3rem;
+    font-size: 2rem;
+    color: rgb(122, 122, 122);
+}
+
+.lead-email {
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    color: rgb(122, 122, 122);
+}
+
+.team-members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.member-details {
+    padding: 10px;
+}
+
+.member-details h2 {
+    font-size: 2rem;
+    color: gray;
+}
+
+.member-email {
+    font-size: 2rem;
+    color: gray;
+}
+
+/* Sales accounts page */
+#hd-container {
+    display: none;
+}
+
+#wm-container {
+    display: none;
+}
+
+#usps-container {
+    display: none;
+}
+
+#ps-container {
+    display: none;
+}
+
+#other-container {
+    display: none;
+}
+
+#hd-arrow {
+    display: none;
+}
+
+#wm-arrow {
+    filter: hue-rotate(180deg);
+    display: none;
+}
+
+#usps-arrow {
+    filter: hue-rotate(200deg);
+    display: none;
+}
+
+#ps-arrow {
+    filter: hue-rotate(330deg);
+    display: none;
+}
+
+#other-arrow {
+    filter: hue-rotate(150deg);
+    display: none;
+}
+
+/* Finance page */
+.externalBtns {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* home page css buttons */
+
+.btTxt-submit:hover {
+    filter: hue-rotate(60deg);
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+    .team-lead {
+        flex-direction: column;
+    }
+}
+
