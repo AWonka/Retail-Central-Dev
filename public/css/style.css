@@ -70,6 +70,7 @@ header img {
     max-width: 100%;
     transition-duration: 250ms;
     transition-timing-function: ease-in-out;
+    cursor: pointer;
 }
 
 .utility a img:hover {
@@ -135,7 +136,7 @@ header img {
 }
 
 .member a img {
-    width: 35%;
+    width: 25%;
     transition-duration: 250ms;
     transition-timing-function: ease-in-out;
 }
