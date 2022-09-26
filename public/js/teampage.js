@@ -1,18 +1,139 @@
+let headerEl = document.querySelector('header');
+let capabilitiesEl = document.querySelector('.capabilities');
+let utilityEl = document.querySelector('.utility');
+let leadEl = document.querySelector('.lead');
+let membersEl = document.querySelector('.team-members');
+
+let leadTitle = '';
+
+// Accounting & Finance
+if (document.title === "Accounting & Finance") {
+    leadTitle = 'Controller-Retail';
+
+    var bannersData = [
+        {
+            'src': '/assets/images/finance/Finance-head-8.png',
+            'alt': 'Finance Banner',
+        },
+        {
+            'src': '/assets/images/finance/Finance-capabilities.png',
+            'alt': 'Finance Capabilities'
+        }
+    ];
+
+    // No utilities
+
+    var utilityData = [
+        {
+            'src': '/assets/images/Certify button-8.png',
+            'alt': 'Certify Button'
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Casey Yingling',
+            'email': 'cyingling@prattindustries.com',
+            'lead': true,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Bob Cichanski',
+            'email': 'bcichanski@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Katie Adcock',
+            'email': 'kadcock@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'John Heinschel',
+            'email': 'jheinschel@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Tara Soroko',
+            'email': 'tsoroko@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Penny Ross',
+            'email': 'pross@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+    ];
+};
+
+// Converted Paper
+if (document.title === "Converted Paper") {
+    leadTitle = 'President';
+
+    var bannersData = [
+        {
+            'src': '/assets/images/converted paper/Converted-Paper-head-8.png',
+            'alt': 'Converted Paper',
+        },
+        {
+            'src': '/assets/images/converted paper/Converted-Paper-Capabilities-8.png',
+            'alt': 'Converted Paper Capabilities'
+        }
+    ];
+
+    // No utilities
+
+    var utilityData = [
+        {
+            'src': '',
+            'alt': ''
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Jay Rogers',
+            'email': 'jnrogers@prattindustries.com',
+            'lead': true,
+            'img': '/assets/images/converted paper/jay-rogers-fix.png',
+        },
+        {
+            'name': 'Kevin Kein',
+            'email': 'kkein@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Karol Krahel',
+            'email': 'kkrahel@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/converted paper/karol-krahel-fix.png',
+        },
+    ];
+};
+
 // DATA AND ANALYTICS
 // ...NEED UTILITY BUTTON
 if (document.title === "Data & Analytics") {
     var bannersData = [
         {
             'src': '/assets/images/data/Data-Analytics-head-8.png',
+            'alt': 'Data and Analytics',
         },
         {
-            'src': '/assets/images/data/Data-Capabilities.png'
+            'src': '/assets/images/data/Data-Capabilities.png',
+            'alt': 'Data and Analytics Capabilities'
         }
     ];
 
     var utilityData = [
         {
-            'src': '/assets/images/Teamwork-button-8.png'
+            'src': '/assets/images/Teamwork-button-8.png',
+            'alt': 'Teamwork Button'
         }
     ];
 
@@ -49,15 +170,18 @@ if (document.title === "Design") {
     var bannersData = [
         {
             'src': '/assets/images/design/Design head-8.png',
+            'alt': 'Design',
         },
         {
-            'src': '/assets/images/design/Design-capabilities.png'
+            'src': '/assets/images/design/Design-capabilities.png',
+            'alt': 'Design Capabilities'
         }
     ];
 
     var utilityData = [
         {
-            'src': '/assets/images/Teamwork-button-8.png'
+            'src': '/assets/images/Teamwork-button-8.png',
+            'alt': 'Teamwork Button'
         }
     ];
 
@@ -89,15 +213,18 @@ if (document.title === "Human Resources") {
     var bannersData = [
         {
             'src': '/assets/images/hr/HR-head-8.png',
+            'alt': 'Human Resources',
         },
         {
-            'src': '/assets/images/design/Design-capabilities.png'
+            'src': '/assets/images/design/Design-capabilities.png',
+            'alt': 'Human Resources Capabilities'
         }
     ];
 
     var utilityData = [
         {
-            'src': '/assets/images/ADP-web-HR.png'
+            'src': '/assets/images/ADP-web-HR.png',
+            'alt': 'Visit ADP button'
         }
     ];
 
@@ -135,15 +262,18 @@ if (document.title === "Inventory Analysis") {
     var bannersData = [
         {
             'src': '/assets/images/inventory/Inventory_1-8.png',
+            'alt': 'Inventory Analysis',
         },
         {
-            'src': '/assets/images/data/Data-Capabilities.png'
+            'src': '/assets/images/data/Data-Capabilities.png',
+            'alt': 'Inventory Analysis Capabilities'
         }
     ];
 
     var utilityData = [
         {
-            'src': '/assets/images/New Item Setup-Inventory.png'
+            'src': '/assets/images/New Item Setup-Inventory.png',
+            'alt': 'New Item Setup Button'
         }
     ];
 
@@ -199,23 +329,75 @@ if (document.title === "Inventory Analysis") {
     ];
 };
 
+// PPD
+if (document.title === "PPD") {
+    leadTitle = 'PPD Manager';
+
+    var bannersData = [
+        {
+            'src': '/assets/images/ppd/PPD-head-8.png',
+            'alt': 'PPD Header',
+        },
+        {
+            'src': '/assets/images/ppd/PPD-Capabilities-8.png',
+            'alt': 'PPD Capabilities'
+        }
+    ];
+
+    var utilityData = [
+        {
+            'src': '/assets/images/Quote Request-Sourcing.png',
+            'alt': 'Quote Request Button',
+        },
+        {
+            'src': '/assets/images/PPD Sample Button.png',
+            'alt': 'PPD Sample Request Button'
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Bob Feldman',
+            'email': 'bfeldman@prattindustries.com',
+            'lead': true,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Ritchie Bell',
+            'email': 'rbell@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Bryan Smith',
+            'email': 'basmith@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        }
+    ];
+};
+
 // QUALITY
 if (document.title === "Quality") {
     var bannersData = [
         {
             'src': '/assets/images/qa/QC head.png',
+            'alt': 'Quality',
         },
         {
-            'src': '/assets/images/qa/QC-Capabilities.png'
+            'src': '/assets/images/qa/QC-Capabilities.png',
+            'alt': 'Quality Capabilities'
         }
     ];
 
     var utilityData = [
         {
             'src': '/assets/images/Fab card - Quality.png',
+            'alt': 'Fab Card Button',
         },
         {
-            'src': '/assets/images/Quality Alert.png'
+            'src': '/assets/images/Quality Alert.png',
+            'alt': 'Quality Alert Button'
         }
     ];
 
@@ -253,9 +435,11 @@ if (document.title === "Safety") {
     var bannersData = [
         {
             'src': '/assets/images/safety/Safety head.png',
+            'alt': 'Safety',
         },
         {
-            'src': '/assets/images/safety/Safety Capabilities.png'
+            'src': '/assets/images/safety/Safety Capabilities.png',
+            'alt': 'Safety Capabilities'
         }
     ];
 
@@ -273,54 +457,65 @@ if (document.title === "Safety") {
     ];
 };
 
-// SIGNAGE & DISTRIBUTION
+// Pratt Direct
 // ...NEED EMPLOYEES UPDATED
-if (document.title === "Signage & Distribution") {
+if (document.title === "Pratt Direct") {
+    leadTitle = 'Director';
+
     var bannersData = [
         {
-            'src': '/assets/images/signage/Signage-head-8.png',
+            'src': '/assets/images/pratt-direct/Pratt Direct head-8.png',
+            'alt': 'Signage',
         },
         {
-            'src': '/assets/images/signage/S&D-capabilities.png'
+            'src': '/assets/images/pratt-direct/S&D-capabilities.png',
+            'alt': 'Signage Capabilities'
         }
     ];
 
     var utilityData = [
         {
-            'src': '/assets/images/Teamwork-button-8.png'
+            'src': '/assets/images/Teamwork-button-8.png',
+            'alt': 'Teamwork Button'
         }
     ];
 
     var employeeData = [
         {
-            'name': 'Rick Sensenbrenner',
-            'email': 'rsensenbrenner@prattindustries.com',
+            'name': 'Josh Kayne',
+            'email': 'jkayne@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
-            'name': 'Angela Clark',
-            'email': 'aclark@prattindustries.com',
+            'name': 'Jace Denney',
+            'email': 'Jdenney@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
-            'name': 'Bernie Trueblood',
-            'email': 'btrueblood@prattindustries.com',
+            'name': 'John Muse',
+            'email': 'jmuse@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
-            'name': 'Ed Wisinski',
-            'email': 'ewisinski@prattindustries.com',
+            'name': 'JJ Musgrove',
+            'email': 'jmusgrov@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Ed Wisinksi Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
-            'name': 'Jeff Pratsch',
-            'email': 'jpratsch@prattindustries.com',
+            'name': 'Jim Bickley',
+            'email': 'jbickley@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Jeff Pratsch Fix.png'
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Scott Geltner',
+            'email': 'sgeltner@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -331,15 +526,18 @@ if (document.title === "Sourcing") {
     var bannersData = [
         {
             'src': '/assets/images/sourcing/Sourcing-head-8.png',
+            'alt': 'Sourcing',
         },
         {
-            'src': '/assets/images/signage/S&D-capabilities.png'
+            'src': '/assets/images/signage/S&D-capabilities.png',
+            'alt': 'Signage Capabilities'
         }
     ];
 
     var utilityData = [
         {
-            'src': '/assets/images/Quote Request-Sourcing.png'
+            'src': '/assets/images/Quote Request-Sourcing.png',
+            'alt': 'Quote Request Button'
         }
     ];
 
@@ -359,13 +557,21 @@ if (document.title === "Sourcing") {
     ];
 };
 
+// commented code below for reading csv data for when we have csv file finalized
 
+// var url = "/assets/Pratt Retail Directory - Teams.csv";
 
-let headerEl = document.querySelector('header');
-let capabilitiesEl = document.querySelector('.capabilities');
-let utilityEl = document.querySelector('.utility');
-let leadEl = document.querySelector('.lead');
-let membersEl = document.querySelector('.team-members');
+// var request = new XMLHttpRequest();
+// request.open('GET', url, false);
+// request.send(null);
+
+// var csvData = new Array();
+// var jsonObject = request.responseText.split(/\r?\n|\r/);
+// for (var i = 0; i < jsonObject.length; i++) {
+//     csvData.push(jsonObject[i].split(','));
+// }
+
+// console.log(csvData);
 
 console.log(document)
 
@@ -381,13 +587,13 @@ function generateBanners() {
     
     const headerBannerEl = document.createElement('img');
     headerBannerEl.setAttribute('src', headerBanner.src);
-    headerBannerEl.setAttribute('alt', 'signage/events banner');
+    headerBannerEl.setAttribute('alt', headerBanner.alt);
 
     const capabilitiesBanner = bannersData[1];
 
     const capabilitiesBannerEl = document.createElement('img');
     capabilitiesBannerEl.setAttribute('src', capabilitiesBanner.src);
-    capabilitiesBannerEl.setAttribute('alt', 'signage/events capabilities');
+    capabilitiesBannerEl.setAttribute('alt', capabilitiesBanner.alt);
 
     headerEl.appendChild(headerBannerEl);
     capabilitiesEl.appendChild(capabilitiesBannerEl);
@@ -429,8 +635,8 @@ function generateEmployees() {
                 <div class="lead-details">
                     <h2>Key Contact:</h2>
                     <p>${employee.name}</p>
-                    <p>Signage Lead</p>
-                    <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt=""></a>
+                    <p>${leadTitle}</p>
+                    <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt="${employee.email}"></a>
                 </div>
             `
 
@@ -445,7 +651,7 @@ function generateEmployees() {
             teamMembersEl.innerHTML = `
                 <img class="member-img" src="${employee.img}" alt="${employee.name} image">
                 <p>${employee.name}</p>
-                <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt=""></a>
+                <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt="${employee.email}"></a>
             `
 
             membersEl.appendChild(teamMembersEl);

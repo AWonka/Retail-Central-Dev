@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Request</title>
+    <link rel="stylesheet" href="/public/css/form.css">
+    <script src="/public/js/itemform.js" defer></script>
+</head>
+<body>
+    <div class="container">
+
+        <form action="">
+            <ul>
+                <div class="info">
+                    <li>
+                        <p>Enter Full Name</p>
+                        <input type="text" id="fname" name="fname" placeholder="Full Name" autocomplete="off" required>
+                            </li>
+            
+                            <li>
+                        <p>Enter Your Email</p>
+                        <input type="text" id="email" name="email" placeholder="Email" autocomplete="off" required> 
+                            </li>
+            
+                            <li>
+                        <p>Enter your Phone Number</p>
+                        <input type="text" id="phnumber" name="phnumber" placeholder="(555) 555-1234" autocomplete="off" required>
+                            </li>
+            
+                            <li>
+                        <p>Enter Project Name</p>
+                        <input type="text" id="prname" name="prname" placeholder="Project Name" autocomplete="off" required>
+                            </li>
+                </div>
+
+                <div class="info2">
+                    <li>
+                        <p>Is this project on Teamwork?</p>
+                        <input class="teamworkclass" type="radio" id="teamworkno" name="teamwork" value="No" onclick="checkTeamwork()" required>
+                        <label class="radio" for="teamworkno">No</label>
+                        <input class="teamworkclass" type="radio" id="teamworkyes" name="teamwork" value="Yes" onclick="checkTeamwork()" required>
+                        <label class="radio" for="teamworkyes">Yes</label>
+
+                        <div class="teamworkname">
+                            <p>What is the Teamwork name?</p>
+                            <input type="text" id="teamworkname" name="teamworkname" placeholder="Teamwork Name" autocomplete="off">
+                        </div>
+                    </li>
+                </div>
+
+                <div class="info3">
+                    <li>
+                        <p>Business Area</p>
+                        <input class="radio" type="radio" id="barea-retail" name="barea" value="Retail" required>
+                        <label class="radio" for="barea-retail">Retail</label>
+                        <input class="radio" type="radio" id="barea-cc" name="barea" value="Cold Chain" required>
+                        <label class="radio" for="barea-cc">Cold Chain</label>
+                        <input class="radio" type="radio" id="barea-ppd" name="barea" value="PPD" required>
+                        <label class="radio" for="barea-ppd">PPD</label>
+                        <input class="radio" type="radio" id="barea-other" name="barea" value="Other" required>
+                        <label class="radio" for="barea-other">Other</label>
+                    </li>
+            
+                    <li>
+                        <p>Customer Name</p>
+                        <input type="text" id="cname" name="cname" placeholder="Customer Name" autocomplete="off" required> 
+                    </li>
+            
+                    <li>
+                        <p>Estimated timeline of program?</p>
+                        <input type="text" id="etimeline" name="etimeline" placeholder="Estimated Timeline" autocomplete="off" required>
+                    </li>
+            
+                    <li>
+                        <p>Likelihood of implementation</p>
+                        <input type="radio" id="implement1" name="implement" required>
+                        <label for="implement1">Not Likely</label>
+                        <input type="radio" id="implement2" name="implement" required>
+                        <label for="implement2">Depends on pricing</label>
+                        <input type="radio" id="implement3" name="implement" required>
+                        <label for="implement3">Certain</label>
+                    </li>
+                </div>
+
+                <div class="info4">
+                    <li>
+                        <p>Are you requesting 1 or more quotes?</p>
+                        <input type="radio" id="1quote" name="quotes" required>
+                        <label for="1quote">1</label>
+                        <input type="radio" id="morequote" name="quotes" required>
+                        <label for="morequote">More</label>
+                    </li>
+
+                    <li>
+                        <p>Select Item Type</p>
+                        <select name="itemtype" id="itemtype" required>
+                            <option value="" disabled selected>Item Type</option>
+                            <option value="Mailers">Mailers</option>
+                            <option value="Labels">Labels</option>
+                        </select>
+                    </li>
+                </div>
+
+                <div class="info2">
+                    <p>Brief Item description</p>
+                    <textarea name="" id="" cols="30" rows="3" placeholder="item description" required></textarea>
+                </div>
+
+                <div class="info2">
+                    <li>
+                        <p>New or comparable item?</p>
+                        <input type="radio" id="neworcomparable1" name="neworcomparable" required>
+                        <label for="neworcomparable1">New</label>
+                        <input type="radio" id="neworcomparable2" name="neworcomparable" required>
+                        <label for="neworcomparable2">Comparable</label>
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Product name" required>
+                        <input type="text" placeholder="Part number" required>
+                    </li>
+                </div>
+
+                <div class="info2">
+                    <li>
+                        <p>Is this a component or finished item?</p>
+                        <input type="radio" id="componentorfinished1" name="componentorfinished" required>
+                        <label for="componentorfinished1">Component</label>
+                        <input type="radio" id="componentorfinished2" name="componentorfinished" required>
+                        <label for="componentorfinished2">Finished item</label>
+                    </li>
+                </div>
+
+                <div class="extraformsdiv">
+
+                </div>     
+                
+                <div class="submit">
+                    <button type="submit" id="submitBtn">Submit</button>
+                </div>
+            </ul>
+        </form>
+
+    </div>
+</body>
+</html>

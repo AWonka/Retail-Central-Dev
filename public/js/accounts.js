@@ -1,3 +1,11 @@
+let headerEl = document.querySelector('header');
+let leadEl = document.querySelector('.lead');
+let membersEl = document.querySelector('.team-members');
+
+let leadTitle = 'Account Manager';
+
+console.log(document)
+
 // CLUTTER INC
 if (document.title === "Clutter Inc") {
     var bannersData = [
@@ -11,13 +19,13 @@ if (document.title === "Clutter Inc") {
             'name': 'Zach Nash',
             'email': 'znash@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jacksoun Routon',
             'email': 'jrouton@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -35,7 +43,7 @@ if (document.title === "Do It Best") {
             'name': 'Jacksoun Routon',
             'email': 'jrouton@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -53,13 +61,15 @@ if (document.title === "Hobby Lobby") {
             'name': 'Jace Denney',
             'email': 'Jdenney@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
 
 // HOME DEPOT
 if (document.title === "Home Depot") {
+    leadTitle = 'National Account Manager';
+
     var bannersData = [
         {
             'src': '/assets/images/accounts/home depot/THD-Head.png',
@@ -71,19 +81,19 @@ if (document.title === "Home Depot") {
             'name': 'Rick Philabaum',
             'email': 'rphilabaum@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Brendan Rogers',
             'email': 'brogers@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Zach Nash',
             'email': 'znash@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -101,7 +111,7 @@ if (document.title === "Home Depot Canada") {
             'name': 'Ryan Reynolds',
             'email': 'rwreynolds@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -119,13 +129,13 @@ if (document.title === "Office Depot") {
             'name': 'Jacksoun Routon',
             'email': 'jrouton@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jami Stanton',
             'email': 'jstanton@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -140,10 +150,10 @@ if (document.title === "Petco") {
 
     var employeeData = [
         {
-            'name': 'Scott Geltner',
+            'name': 'Jackson Routon',
             'email': 'sgeltner@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -161,7 +171,25 @@ if (document.title === "Public Storage") {
             'name': 'Scott Mills',
             'email': 'lsmills@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
+        }
+    ];
+};
+
+// The Container Store
+if (document.title === "The Container Store") {
+    var bannersData = [
+        {
+            'src': '/assets/images/accounts/publicstorage/Public-Storage-head.png',
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Jace Denney',
+            'email': 'Jdenney@prattindustries.com',
+            'lead': true,
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -179,19 +207,44 @@ if (document.title === "USPS") {
             'name': 'Jace Denney',
             'email': 'Jdenney@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jami Stanton',
             'email': 'jstanton@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
 
+if (document.title === "Victory") {
+    var bannersData = [
+        {
+            'src': '/assets/images/accounts/usps/USPS-head.png',
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Jace Denney',
+            'email': 'Jdenney@prattindustries.com',
+            'lead': true,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Jami Stanton',
+            'email': 'jstanton@prattindustries.com',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        }
+    ];
+}
+
 // WALMART
 if (document.title === "Walmart") {
+    leadTitle = 'National Account Manager';
+
     var bannersData = [
         {
             'src': '/assets/images/accounts/walmart/Walmart-head.png',
@@ -203,45 +256,38 @@ if (document.title === "Walmart") {
             'name': 'Vandy Cameron',
             'email': 'vjcameron2@prattindustries.com',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Becca Iverson',
             'email': 'riverson@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Shane Stewart',
             'email': 'sstewart3@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jason Avila',
             'email': 'javila@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Kari Files',
             'email': 'kfiles@prattindustries.com',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
 
-let headerEl = document.querySelector('header');
-let leadEl = document.querySelector('.lead');
-let membersEl = document.querySelector('.team-members');
-
-console.log(document)
-
 // calling functions
 generateBanners();
 generateEmployees();
-
 
 // generate header and capabilities banners
 function generateBanners() {
@@ -270,7 +316,7 @@ function generateEmployees() {
                 <div class="lead-details">
                     <h2>Key Contact:</h2>
                     <p>${employee.name}</p>
-                    <p>Signage Lead</p>
+                    <p>${leadTitle}</p>
                     <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt=""></a>
                 </div>
             `
