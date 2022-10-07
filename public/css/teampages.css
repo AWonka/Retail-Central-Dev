@@ -164,6 +164,11 @@ header img {
     margin-top: 0.5rem;
 }
 
+/* for employee job titles excluding lead */
+.member p:nth-child(3) {
+    font-size: 1.5rem;
+}
+
 .member-img{
     width: 100%;
     border-radius: 50%;

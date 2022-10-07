@@ -1,7 +1,11 @@
-make victory page -- Need Header Banner
+make victory page -- Need Header Banner will delete victory
 make container store page -- Need Header Banner
 make accounting & finance page
 need pratt direct capabilities banner updated
 
 setup external links for utility buttons
 ask about accounting and finance employees
+ask about data/analytics email concerned contact
+
+Jared will be lead on finance
+put job title for each employee

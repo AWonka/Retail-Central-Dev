@@ -1,15 +1,5 @@
-let headerEl = document.querySelector('header');
-let capabilitiesEl = document.querySelector('.capabilities');
-let utilityEl = document.querySelector('.utility');
-let leadEl = document.querySelector('.lead');
-let membersEl = document.querySelector('.team-members');
-
-let leadTitle = '';
-
 // Accounting & Finance
 if (document.title === "Accounting & Finance") {
-    leadTitle = 'Controller-Retail';
-
     var bannersData = [
         {
             'src': '/assets/images/finance/Finance-head-8.png',
@@ -32,48 +22,73 @@ if (document.title === "Accounting & Finance") {
 
     var employeeData = [
         {
-            'name': 'Casey Yingling',
-            'email': 'cyingling@prattindustries.com',
+            'name': 'Jared Barichivich',
+            'email': 'jbarichivich@prattindustries.com',
+            'title': 'Controller Finance',
             'lead': true,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
+            'name': 'Casey Yingling',
+            'email': 'cyingling@prattindustries.com',
+            'title': 'Controller-Retail',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
             'name': 'Bob Cichanski',
-            'email': 'bcichanski@prattindustries.com',
+            'email': 'rcichanski@prattindustries.com',
+            'title': 'Controller-Converted Ppr and Capital',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Katie Adcock',
             'email': 'kadcock@prattindustries.com',
+            'title': 'Asst. Controller-PPD',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'John Heinschel',
             'email': 'jheinschel@prattindustries.com',
+            'title': 'Asst. Controller-Cold Chain',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Tara Soroko',
             'email': 'tsoroko@prattindustries.com',
+            'title': 'Asst. Controller-Emerging Markets-Pratt Box',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Penny Ross',
             'email': 'pross@prattindustries.com',
+            'title': 'Supervisor, Accounts Payable',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
+        {
+            'name': 'Keyona King',
+            'email': 'kking@prattindustries.com',
+            'title': 'Supervisor, Accounts Receivable(Not Conv. Paper)',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Sharron Adams',
+            'email': 'sadams@prattindustries.com',
+            'title': 'Supervisor, Accounts Receivable Conv. Paper',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        }
     ];
 };
 
 // Converted Paper
 if (document.title === "Converted Paper") {
-    leadTitle = 'President';
-
     var bannersData = [
         {
             'src': '/assets/images/converted paper/Converted-Paper-head-8.png',
@@ -98,21 +113,31 @@ if (document.title === "Converted Paper") {
         {
             'name': 'Jay Rogers',
             'email': 'jnrogers@prattindustries.com',
+            'title': 'President',
             'lead': true,
             'img': '/assets/images/converted paper/jay-rogers-fix.png',
         },
         {
             'name': 'Kevin Kein',
             'email': 'kkein@prattindustries.com',
+            'title': 'Sales Manager',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Karol Krahel',
             'email': 'kkrahel@prattindustries.com',
+            'title': 'Marketing & Business Development',
             'lead': false,
             'img': '/assets/images/converted paper/karol-krahel-fix.png',
         },
+        {
+            'name': 'Daniella Azevedo',
+            'email': 'dazevedo@prattindustries.com',
+            'title': 'Project Manager',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        }
     ];
 };
 
@@ -141,26 +166,23 @@ if (document.title === "Data & Analytics") {
         {
             'name': 'Sneha Nayee',
             'email': 'snayee@prattindustries.com',
+            'title': 'Senior Data Analyst',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
-        },
-        {
-            'name': 'Bryan Smith',
-            'email': 'basmith@prattindustries.com',
-            'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Hiren Jani',
             'email': 'hjani@prattindustries.com',
+            'title': 'Data Analyst',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Stephen Codara',
             'email': 'scodara@prattindustries.com',
+            'title': 'Business Data Analyst',
             'lead': false,
-            'img': '/assets/images/signage/Ed Wisinksi Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -189,20 +211,65 @@ if (document.title === "Design") {
         {
             'name': 'Travis Walters',
             'email': 'twwalters@prattindustries.com',
+            'title': 'Creative Director',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
-        },
-        {
-            'name': 'Rebecca Iverson',
-            'email': 'riverson@prattindustries.com',
-            'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Daniell Isett',
             'email': 'disett@prattindustries.com',
+            'title': 'Creative Design Manager',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Randy Ball',
+            'email': 'rball@prattindustries.com',
+            'title': 'Senior Structural Designer',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Hannah Conrad',
+            'email': 'hconrad@prattindustries.com',
+            'title': 'Innovation Design Manager',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Stacey Smith',
+            'email': 'ssmith3@prattindustries.com',
+            'title': 'Design Project Manager',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Juan Orrellana',
+            'email': 'jforellana@prattindustries.com',
+            'title': 'Graphic Design',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Nina Burbano',
+            'email': 'nburbano@prattindustries.com',
+            'title': 'Graphic Design',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Markel Graham',
+            'email': 'mgraham2@prattindustries.com',
+            'title': 'Senior Structural Design',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'John Taddei',
+            'email': 'jtaddei@prattindustries.com',
+            'title': 'Structural Design',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -232,26 +299,30 @@ if (document.title === "Human Resources") {
         {
             'name': 'Shannon Zink',
             'email': 'szink@prattindustries.com',
+            'title': 'Divisional HR Manager',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Matthew Mutarelli',
             'email': 'mgmutarelli@prattindustries.com',
+            'title': 'Regional HR Manager',
             'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Andrea Martinez',
             'email': 'ammartinez2@prattindustries.com',
+            'title': 'Regional HR Manager',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'PJ Rhodes',
             'email': 'prhodes@prattindustries.com',
+            'title': 'Regional HR Manager',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -265,7 +336,7 @@ if (document.title === "Inventory Analysis") {
             'alt': 'Inventory Analysis',
         },
         {
-            'src': '/assets/images/data/Data-Capabilities.png',
+            'src': '/assets/images/inventory/Inventory-Capabilities-8.png',
             'alt': 'Inventory Analysis Capabilities'
         }
     ];
@@ -281,58 +352,57 @@ if (document.title === "Inventory Analysis") {
         {
             'name': 'Matt Smith',
             'email': 'msmith@prattindustries.com',
+            'title': 'Operations Director',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Alex Inda',
             'email': 'ainda@prattindustries.com',
+            'title': 'Master Planner',
             'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jess Hoskinson Beard',
             'email': 'jhoskinson@prattindustries.com',
+            'title': 'Master Planner',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
-            'name': 'Chris Ward',
-            'email': 'cward2@prattindustries.com',
+            'name': 'James Mabry',
+            'email': 'jmabrey@prattindustries.com',
+            'title': 'Planner-PPD',
             'lead': false,
-            'img': '/assets/images/signage/Ed Wisinksi Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Lori McComas',
             'email': 'lmccomas@prattindustries.com',
+            'title': 'Master Planner',
             'lead': false,
-            'img': '/assets/images/signage/Ed Wisinksi Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jim Knight',
             'email': 'jknight@prattindustries.com',
+            'title': 'Data Integrity Analyst',
             'lead': false,
-            'img': '/assets/images/signage/Ed Wisinksi Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'John Steeg',
             'email': 'jsteeg@prattindustries.com',
+            'title': 'Project Manager',
             'lead': false,
-            'img': '/assets/images/signage/Ed Wisinksi Fix.png',
-        },
-        {
-            'name': 'Lynn Collins',
-            'email': 'lcollins@prattindustries.com',
-            'lead': false,
-            'img': '/assets/images/signage/Ed Wisinksi Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
 
 // PPD
 if (document.title === "PPD") {
-    leadTitle = 'PPD Manager';
-
     var bannersData = [
         {
             'src': '/assets/images/ppd/PPD-head-8.png',
@@ -359,18 +429,21 @@ if (document.title === "PPD") {
         {
             'name': 'Bob Feldman',
             'email': 'bfeldman@prattindustries.com',
+            'title': 'PPD Manager',
             'lead': true,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Ritchie Bell',
             'email': 'rbell@prattindustries.com',
+            'title': 'Procurement Buyer',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Bryan Smith',
             'email': 'basmith@prattindustries.com',
+            'title': 'Data Analytics',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         }
@@ -405,32 +478,28 @@ if (document.title === "Quality") {
         {
             'name': 'David Timmons',
             'email': 'dtimmons@prattindustries.com',
+            'title': 'Divisional Quality Manager',
             'lead': true,
-            'img': '/assets/images/signage/Rick Sensenbrenner Fix.png',
-        },
-        {
-            'name': 'Amy Rusignuolo',
-            'email': 'arusignuolo@prattindustries.com',
-            'lead': false,
-            'img': '/assets/images/signage/Angela Clark Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Kristen Kane',
             'email': 'kkane@prattindustries.com',
+            'title': 'Quality Project Manager',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Patty Nichols',
             'email': 'pnichols@prattindustries.com',
+            'title': 'Regional Quality Manager',
             'lead': false,
-            'img': '/assets/images/signage/Bernie Trueblood Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
 
 // SAFETY
-// ...IS THERE NO UTILITY BUTTON?
 if (document.title === "Safety") {
     var bannersData = [
         {
@@ -451,17 +520,22 @@ if (document.title === "Safety") {
         {
             'name': 'Corey Roskoski',
             'email': 'croskoski@prattindustries.com',
+            'title': 'Divisional Safety Manager',
             'lead': true,
-            'img': '/assets/images/sourcing/Lynn-Collins-Fix.png',
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Conner Massie',
+            'email': 'cmassie@prattindustries.com',
+            'title': 'Regional Safety Manager',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
         }
     ];
 };
 
 // Pratt Direct
-// ...NEED EMPLOYEES UPDATED
 if (document.title === "Pratt Direct") {
-    leadTitle = 'Director';
-
     var bannersData = [
         {
             'src': '/assets/images/pratt-direct/Pratt Direct head-8.png',
@@ -484,36 +558,42 @@ if (document.title === "Pratt Direct") {
         {
             'name': 'Josh Kayne',
             'email': 'jkayne@prattindustries.com',
+            'title': 'Director',
             'lead': true,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jace Denney',
             'email': 'Jdenney@prattindustries.com',
+            'title': 'Sales Manager',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'John Muse',
             'email': 'jmuse@prattindustries.com',
+            'title': 'Signage Sales Manager',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'JJ Musgrove',
             'email': 'jmusgrov@prattindustries.com',
+            'title': 'Sales Manager',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jim Bickley',
             'email': 'jbickley@prattindustries.com',
+            'title': 'Sales Manager',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Scott Geltner',
             'email': 'sgeltner@prattindustries.com',
+            'title': 'Sales Manager',
             'lead': false,
             'img': '/assets/images/Profile-place-holder-8.png',
         }
@@ -521,7 +601,6 @@ if (document.title === "Pratt Direct") {
 };
 
 // SOURCING
-// ...NEED CAPABILITIES BANNER
 if (document.title === "Sourcing") {
     var bannersData = [
         {
@@ -529,7 +608,7 @@ if (document.title === "Sourcing") {
             'alt': 'Sourcing',
         },
         {
-            'src': '/assets/images/signage/S&D-capabilities.png',
+            'src': '/assets/images/sourcing/Sourcing-Capabilities-8.png',
             'alt': 'Signage Capabilities'
         }
     ];
@@ -545,14 +624,23 @@ if (document.title === "Sourcing") {
         {
             'name': 'Lynn Collins',
             'email': 'lcollins@prattindustries.com',
+            'title': 'Sourcing Manager: Retail & Cold Chain',
             'lead': true,
             'img': '/assets/images/sourcing/Lynn-Collins-Fix.png',
         },
         {
             'name': 'Rusty Rivers',
             'email': 'rmrivers@prattindustries.com',
+            'title': 'Sourcing Manager: PPD',
             'lead': false,
             'img': '/assets/images/sourcing/Rusty-Rivers-Fix.png',
+        },
+        {
+            'name': 'Tanja Bilbija',
+            'email': 'tbilbija@prattindustries.com',
+            'title': 'Procurement Buyer/Purchasing',
+            'lead': false,
+            'img': '/assets/images/sourcing/Tanja-Bilbija-Fix.png',
         }
     ];
 };
@@ -572,6 +660,12 @@ if (document.title === "Sourcing") {
 // }
 
 // console.log(csvData);
+
+let headerEl = document.querySelector('header');
+let capabilitiesEl = document.querySelector('.capabilities');
+let utilityEl = document.querySelector('.utility');
+let leadEl = document.querySelector('.lead');
+let membersEl = document.querySelector('.team-members');
 
 console.log(document)
 
@@ -622,7 +716,6 @@ function generateUtilityBtns() {
 // generate team lead and members of team
 function generateEmployees() {
     employeeData.forEach(employee => {
-
         if(employee.lead === true) {
 
             const teamLeadEl = document.createElement('div');
@@ -635,7 +728,7 @@ function generateEmployees() {
                 <div class="lead-details">
                     <h2>Key Contact:</h2>
                     <p>${employee.name}</p>
-                    <p>${leadTitle}</p>
+                    <p>${employee.title}</p>
                     <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt="${employee.email}"></a>
                 </div>
             `
@@ -651,10 +744,15 @@ function generateEmployees() {
             teamMembersEl.innerHTML = `
                 <img class="member-img" src="${employee.img}" alt="${employee.name} image">
                 <p>${employee.name}</p>
+                <p>${employee.title}</p>
                 <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt="${employee.email}"></a>
             `
-
+            
             membersEl.appendChild(teamMembersEl);
+        }
+
+        if(employeeData.length >= 5) {
+            membersEl.style.justifyContent = "Center";
         }
     });
 };
