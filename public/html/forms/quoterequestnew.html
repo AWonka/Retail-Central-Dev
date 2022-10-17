@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Request</title>
+    <link rel="stylesheet" href="/public/css/formnew.css">
+    <script src="/public/js/quoterequestnew.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="form-title">Sourcing Submission Form</h1>
+        <form action="">
+            <ul>
+
+                <div class="section">
+                    <div class="section-header">
+                        <h1>User information</h1>
+                        <p class="date-time">
+                            Date: 2022-10-10 8:33 a.m.
+                        </p>
+                    </div>
+                    <div class="section-user-information">
+                        <li class="">
+                            
+                                <label for="fName">Name</label>
+                            
+                            
+                                <input class="required" type="text" id="fName" name="fName" autocomplete="off" required>
+                            
+                        </li>
+                        <li class="">
+                            
+                                <label for="email">Email</label>
+                            
+                            
+                                <input type="text" id="email" name="email" autocomplete="off" required>
+                            
+                        </li>
+                        <li class="">
+                        
+                                <label for="phNumber">Phone #</label>
+                            
+                            
+                                <input type="text" id="phNumber" name="phNumber" autocomplete="off" required>
+                            
+                        </li>
+                        <li class="">
+                            
+                                <label for="bArea">Business Area</label>
+                            
+                            
+                                <select name="bArea" id="bArea" required>
+                                    <option value="" disabled selected>-</option>
+                                    <option value="retail">RETAIL</option>
+                                    <option value="cold-chain">COLD CHAIN</option>
+                                    <option value="ppd">PPD</option>
+                                    <option value="other">OTHER</option>
+                                </select>
+                            
+                        </li>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <h1>Project Information</h1>
+                    </div>
+                    <div class="section-project-information">
+                        <li>
+                            <label for="projectName">Project Name</label>
+                            <input type="text" id="projectName" name="projectName" autocomplete="off" required>
+                        </li>
+                        <li>
+                            <label for="customerName">Customer Name</label>
+                            <input type="text" id="customerName" name="customerName" autocomplete="off" required>
+                        </li>
+                        <li>
+                            <label for="productCategory">Product Category</label>
+                            <select name="productCategory" id="productCategory" required>
+                                <option value="" disabled selected>-</option>
+                                <option value="mailers">Mailers</option>
+                                <option value="labels">Labels</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="estTimeline">Est. Timeline of Program?</label>
+                            <input type="text" id="estTimeline" name="estTimeline" autocomplete="off" required>
+                        </li>
+                        <li>
+                            <label for="quoteCount">How many quotes?</label>
+                            <input type="text" id="quoteCount" name="quoteCount" autocomplete="off" required>
+                        </li>
+                        <li>
+                            <label for="itemDescription">Brief Item Description</label>
+                            <input type="text" id="itemDescription" name="itemDescription" autocomplete="off" required>
+                        </li>
+                        <li class="li-fix">
+                            <div>
+                                <label for="implementation">Likelihood of Implementation</label>
+                            </div>
+                            <div>
+                                <select name="implementation" id="implementation" required>
+                                    <option value="" disabled selected>-</option>
+                                    <option value="Not Likely">1-Not Likely</option>
+                                    <option value="Depends on Pricing">3-Depends on Pricing</option>
+                                    <option value="Certain">5-Certain</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="">
+                            <label for="newOrComparable">New or comparable item?</label>
+                            <select name="newOrComparable" id="newOrComparable" required>
+                                <option value="" disabled selected>-</option>
+                                <option value="new">New</option>
+                                <option value="comparable">Comparable</option>
+                            </select>
+                            <div class="selected-comparable">
+                                <label class="required optProductNameLabel" for=""></label>
+                                <input type="text" id="optProductName" name="optProductName" autocomplete="off" placeholder="Product Name">
+                                <label class="required optPartNumberLabel" for=""></label>
+                                <input type="text" id="optPartNumber" name="optPartNumber" autocomplete="off" placeholder="Part Number">
+                            </div>
+                        </li>
+                        <li class="li-fix">
+                            <div>
+                                <label for="componentOrFinished">Is this a Component or Finished Item?</label>
+                            </div>
+                            <div>
+                                <select name="" id="">
+                                    <option value="" disabled selected>-</option>
+                                    <option value="Component">Component</option>
+                                    <option value="Finished">Finished</option>
+                                </select>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+
+                <div class="product-forms">
+
+                </div>
+
+                <!-- <div class="mailer">
+                    <h1>Mailer</h1>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h1>Mailer Size & Material</h1>
+                        </div>
+                        <div class="section-mailer-size-material">
+                            <li class="li-fix">
+                                <div>
+                                <label for="">What Size Mailer?</label>
+                                </div>
+                                <div>
+                                <select name="" id="sizeMailer" required>
+                                    <option value="" disabled selected>-</option>
+                                    <option value="6.5 x 9">0 (6.5 x 9)</option>
+                                    <option value="8.5 x 12">2 (8.5 x 12)</option>
+                                    <option value="16 x 10.5">5 (16 x 10.5)</option>
+                                    <option value="12.5 x 19">6 (12.5 x 19)</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <input type="text" id="sizeMailerOther" name="sizeMailerOther" autocomplete="off" placeholder="List Finished Size">
+                                </div>
+                            </li>
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">Mailer Material</label>
+                                </div>
+                                <div>
+                                    <select name="mailerMaterial" id="mailerMaterial" required>
+                                        <option value="" disabled selected>-</option>
+                                        <option value="Poly">Poly</option>
+                                        <option value="Poly-Bubble">Poly-Bubble</option>
+                                        <option value="Paper-Bubble">Paper-Bubble</option>
+                                        <option value="Paper">Paper</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <select name="mailerMaterialPaper" id="mailerMaterialPaper">
+                                        <option value="" disabled selected>Paper Type</option>
+                                        <option value="White">White</option>
+                                        <option value="Goldenrod">Goldenrod</option>
+                                        <option value="Natural Kraft">Natural Kraft</option>
+                                    </select>
+                                    <input type="text" id="otherMailerMaterial" name="otherMailerMaterial" autocomplete="off" placeholder="List Material">
+                                </div>
+                            </li>
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">Is your customer open to alternative materials?</label>
+                                </div>
+                                <div>
+                                    <select name="mailerAlternativeMaterials" id="mailerAlternativeMaterials">
+                                        <option value="" disabled selected>-</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">Does the mailer need to be printed?</label>
+                                </div>
+                                <div>
+                                    <select name="mailerNeedPrinted" id="mailerNeedPrinted">
+                                        <option value="" disabled selected>-</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <button>Upload Artwork</button>
+                                    <a href="">80000.jpg</a>
+                                    <select name="" id="">
+                                        <option value="" disabled selected>-</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <input type="text" id="" name="" autocomplete="off" placeholder="PMS Color">
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h1>Mailer Packout</h1>
+                        </div>
+                        <div class="section-mailer-packout">
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">How are they being packed out?</label>
+                                </div>
+                                <div>
+                                    <select name="mailerHowPacked" id="mailerHowPacked">
+                                        <option value="" disabled selected>-</option>
+                                        <option value="Individual pieces">Individual pieces</option>
+                                        <option value="In packs">In packs</option>
+                                    </select>
+                                    <input type="text" id="" name="" autocomplete="off" placeholder="How many pieces per pack?">
+                                    <select name="" id="">
+                                        <option value="" disabled selected>-</option>
+                                        <option value="Shrinked">Shrinked</option>
+                                        <option value="Banded">Banded</option>
+                                    </select>
+                                    <select name="" id="">
+                                        <option value="" disabled selected></option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <button>Upload Artwork</button>
+                                </div>
+                            </li>
+
+                            <li>
+                                <label for="">Unit of Measurement</label>
+                                <input type="text" id="" name="" autocomplete="off" required>
+                            </li>
+
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">Estimated annual order quantity in pcs</label>
+                                </div>
+                                <div>
+                                    <input type="text" id="" name="" autocomplete="off" required>
+                                </div>
+                            </li>
+
+                            <li>
+                                <label for="">Quantity breaks in pcs</label>
+                                <input type="text" id="" name="" autocomplete="off" required>
+                            </li>
+
+                            <li>
+                                <label for="">Case Count</label>
+                                <input type="text" id="" name="" autocomplete="off" required>
+                            </li>
+
+                            <li>
+                                <label for="">Pallet Count</label>
+                                <input type="text" id="" name="" autocomplete="off" required>
+                            </li>
+
+                            <li>
+                                <label for="">TL Quantity</label>
+                                <input type="text" id="" name="" autocomplete="off" required>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h1>Mailer Shipping Info</h1>
+                        </div>
+                        <div class="section-shipping-info">
+                            <li class="">
+                                <label for="">Ship To:</label>
+                                <select name="" id="">
+                                    <option value="" disabled selected>-</option>
+                                    <option value="DC">DC</option>
+                                    <option value="Other Address">Other address</option>
+                                    <option value="Dropship">Dropship</option>
+                                    <option value="Customer Pickup">Customer pickup</option>
+                                </select>
+
+                                <select name="" id="">
+                                    <option value="" disabled selected>-</option>
+                                    <option value="47 Conyers">47 (Conyers)</option>
+                                    <option value="TX Dallas">TX (Dallas)</option>
+                                    <option value="RC Ontario CA">RC (Ontario CA)</option>
+                                    <option value="UC Stockton">UC (Stockton)</option>
+                                    <option value="C8 Lathrop">C8 (Lathrop)</option>
+                                    <option value="KW Kent">KW (Kent)</option>
+                                    <option value="R3 Dayton NJ">R3 (Dayton NJ)</option>
+                                    <option value="DO Dayton OH">DO (Dayton OH)</option>
+                                    <option value="VO Vandalia">VO (Vandalia)</option>
+                                    <option value="WO Wapakoneta">WO (Wapakoneta)</option>
+                                    <option value="GT Garland">GT (Garland)</option>
+                                    <option value="AP Allentown">AP (Allentown)</option>
+                                    <option value="CP Carlisle">CP (Carlisle)</option>
+                                    <option value="NG Newnan">NG (Newnan)</option>
+                                </select>
+
+                                <input type="text" id="" name="" autocomplete="off" placeholder="Enter Address">
+                                <input type="text" id="" name="" autocomplete="off" placeholder="Enter Dropship">
+                                <input type="text" id="" name="" autocomplete="off" placeholder="Who will pick it up?">
+                            </li>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="label">
+                    <h1>Label</h1>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h1>Label Materials and Size</h1>
+                        </div>
+                        <div class="section-label-material">
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">Finished size?</label>
+                                </div>
+                                <div>
+                                    <input type="text" id="" name="" autocomplete="off" required>
+                                </div>
+                            </li>
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">Material?</label>
+                                </div>
+                                <div>
+                                    <input type="text" id="" name="" autocomplete="off" required>
+                                </div>
+                            </li>
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">Wind Direction?</label>
+                                </div>
+                                <div>
+                                    <input type="text" id="" name="" autocomplete="off" required>
+                                </div>
+                            </li>
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">Is your customer open to alternative materials?</label>
+                                </div>
+                                <div>
+                                    <input type="text" id="" name="" autocomplete="off" required>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h1>Label Packout</h1>
+                        </div>
+                        <div class="section-label-packout">
+                            <li class="li-fix">
+                                <div>
+                                    <label for="">Estimated annual order quantity in pcs</label>
+                                </div>
+                                <div>
+                                    <input type="text" id="" name="" autocomplete="off" required>
+                                </div>
+                            </li>
+
+                            <li>
+                                <label for="">Quantity breaks in pcs</label>
+                                <input type="text" id="" name="" autocomplete="off" required>
+                            </li>
+
+                            <li>
+                                <label for="">Case Count</label>
+                                <input type="text" id="" name="" autocomplete="off" required>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h1>Label Shipping Info</h1>
+                        </div>
+                        <div class="section-shipping-info">
+                            <li class="">
+                                <label for="">Ship To:</label>
+                                <select name="" id="">
+                                    <option value="" disabled selected>-</option>
+                                    <option value="DC">DC</option>
+                                    <option value="Other Address">Other address</option>
+                                    <option value="Dropship">Dropship</option>
+                                    <option value="Customer Pickup">Customer pickup</option>
+                                </select>
+
+                                <select name="" id="">
+                                    <option value="" disabled selected>-</option>
+                                    <option value="47 Conyers">47 (Conyers)</option>
+                                    <option value="TX Dallas">TX (Dallas)</option>
+                                    <option value="RC Ontario CA">RC (Ontario CA)</option>
+                                    <option value="UC Stockton">UC (Stockton)</option>
+                                    <option value="C8 Lathrop">C8 (Lathrop)</option>
+                                    <option value="KW Kent">KW (Kent)</option>
+                                    <option value="R3 Dayton NJ">R3 (Dayton NJ)</option>
+                                    <option value="DO Dayton OH">DO (Dayton OH)</option>
+                                    <option value="VO Vandalia">VO (Vandalia)</option>
+                                    <option value="WO Wapakoneta">WO (Wapakoneta)</option>
+                                    <option value="GT Garland">GT (Garland)</option>
+                                    <option value="AP Allentown">AP (Allentown)</option>
+                                    <option value="CP Carlisle">CP (Carlisle)</option>
+                                    <option value="NG Newnan">NG (Newnan)</option>
+                                </select>
+
+                                <input type="text" id="" name="" autocomplete="off" placeholder="Enter Address">
+                                <input type="text" id="" name="" autocomplete="off" placeholder="Enter Dropship">
+                                <input type="text" id="" name="" autocomplete="off" placeholder="Who will pick it up?">
+                            </li>
+                        </div>
+                    </div>
+                </div> -->
+
+            </ul>
+        </form>
+    </div>
+</body>
+</html>

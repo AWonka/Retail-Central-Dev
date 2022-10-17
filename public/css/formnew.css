@@ -1,0 +1,182 @@
+/* start of evergreen css */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    margin: 0;    
+    min-height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 1.2rem;
+}
+
+input,
+select {
+   max-width: 200px;
+   width: 100%;
+   border: 2px solid black;
+}
+
+input {
+    padding: 0.2rem;
+}
+
+select {
+    padding: 0.16rem;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    width: 200px;
+    text-align: right;
+}
+
+label::after {
+    content: " *";
+    color: red;
+}
+
+/* li-fix is for fixing alignment problems with longer text */
+.li-fix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.li-fix div label {
+    text-align: end;
+}
+
+.li-fix div select {
+    float: left;
+}
+
+.li-fix div input {
+    float: left;
+}
+
+.li-fix div button {
+    float: left;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    margin: 5px 0 5px;
+}
+
+.radio-fix {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-fix p {
+    margin: 5px auto 0;
+    width: 40%;
+    float: left;
+}
+
+.radio-fix label {
+    width: 100%;
+    text-align: center;
+}
+
+.radio-fix input {
+    float: right;
+    margin: 5px auto 5px;
+}
+
+.container {
+    background-color: rgb(187, 189, 191);
+    width: 1500px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem auto;
+    padding: 1rem 2rem;
+}
+
+.form-title {
+    margin: 0.5rem 0 0.5rem;
+}
+
+.section {
+    background-color: white;
+    border: 2px solid black;
+    margin-bottom: 1rem;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.section-header h1,
+.section-header p {
+    margin: 1rem;
+}
+
+.selected-comparable {
+    display: flex;
+    float: right;
+}
+
+.selected-comparable input {
+    margin: 0.2rem;
+}
+/* end of evergreen css */
+
+.section-user-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    margin-right: 8rem;
+}
+
+.section-project-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.section-project-information label {
+    text-align: center;
+}
+
+/* mailer css */
+
+.section-mailer-size-material {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.section-mailer-packout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.section-label-material {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.section-label-packout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+
