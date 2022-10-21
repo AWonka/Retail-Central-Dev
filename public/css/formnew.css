@@ -41,7 +41,22 @@ label {
     text-align: right;
 }
 
-label::after {
+.progress-bar {
+    position: fixed;
+    right: 36%;
+    width: 500px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.progress-tracker {
+    text-align: center;
+    background-color: green;
+}
+
+.required::after {
     content: " *";
     color: red;
 }
@@ -131,8 +146,36 @@ label::after {
     float: right;
 }
 
+.selected-comparable label {
+    width: 2%;
+    margin: auto;
+}
+
 .selected-comparable input {
     margin: 0.2rem;
+}
+
+.submit-div {
+    text-align: center;
+}
+
+.submit-btn {
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    width: 300px;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-enabled:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.btn-disabled:hover {
+    cursor:not-allowed;
 }
 /* end of evergreen css */
 
@@ -167,6 +210,20 @@ label::after {
     text-align: center;
 }
 
+.mailer-selected-other {
+    display: flex;
+    margin: auto 0;
+}
+
+.mailer-selected-other label {
+    width: 2%;
+}
+
+.mailer-selected-other input {
+    margin: 0 0.3rem;
+}
+
+/* label css */
 .section-label-material {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

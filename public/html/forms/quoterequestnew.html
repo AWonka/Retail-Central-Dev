@@ -11,6 +11,11 @@
 <body>
     <div class="container">
         <h1 class="form-title">Sourcing Submission Form</h1>
+        <div class="progress-bar">
+            <div class="progress-tracker">
+                <span class="progress-number">0%</span>
+            </div>
+        </div>
         <form action="">
             <ul>
 
@@ -24,34 +29,34 @@
                     <div class="section-user-information">
                         <li class="">
                             
-                                <label for="fName">Name</label>
+                                <label class="required" for="fName">Name</label>
                             
                             
-                                <input class="required" type="text" id="fName" name="fName" autocomplete="off" required>
+                                <input class="required track" type="text" id="fName" name="fName" autocomplete="off" required>
                             
                         </li>
                         <li class="">
                             
-                                <label for="email">Email</label>
+                                <label class="required" for="email">Email</label>
                             
                             
-                                <input type="text" id="email" name="email" autocomplete="off" required>
+                                <input type="text track" id="email" name="email" autocomplete="off" required>
                             
                         </li>
                         <li class="">
                         
-                                <label for="phNumber">Phone #</label>
+                                <label class="required" for="phNumber">Phone #</label>
                             
                             
-                                <input type="text" id="phNumber" name="phNumber" autocomplete="off" required>
+                                <input type="text track" id="phNumber" name="phNumber" autocomplete="off" required>
                             
                         </li>
                         <li class="">
                             
-                                <label for="bArea">Business Area</label>
+                                <label class="required" for="bArea">Business Area</label>
                             
                             
-                                <select name="bArea" id="bArea" required>
+                                <select class="track" name="bArea" id="bArea" required>
                                     <option value="" disabled selected>-</option>
                                     <option value="retail">RETAIL</option>
                                     <option value="cold-chain">COLD CHAIN</option>
@@ -69,39 +74,39 @@
                     </div>
                     <div class="section-project-information">
                         <li>
-                            <label for="projectName">Project Name</label>
-                            <input type="text" id="projectName" name="projectName" autocomplete="off" required>
+                            <label class="required" for="projectName">Project Name</label>
+                            <input type="text" class="track" id="projectName" name="projectName" autocomplete="off" required>
                         </li>
                         <li>
-                            <label for="customerName">Customer Name</label>
-                            <input type="text" id="customerName" name="customerName" autocomplete="off" required>
+                            <label class="required" for="customerName">Customer Name</label>
+                            <input type="text" class="track" id="customerName" name="customerName" autocomplete="off" required>
                         </li>
                         <li>
-                            <label for="productCategory">Product Category</label>
-                            <select name="productCategory" id="productCategory" required>
+                            <label class="required" for="productCategory">Product Category</label>
+                            <select class="track" name="productCategory" id="productCategory" required>
                                 <option value="" disabled selected>-</option>
                                 <option value="mailers">Mailers</option>
                                 <option value="labels">Labels</option>
                             </select>
                         </li>
                         <li>
-                            <label for="estTimeline">Est. Timeline of Program?</label>
-                            <input type="text" id="estTimeline" name="estTimeline" autocomplete="off" required>
+                            <label class="required" for="estTimeline">Est. Timeline of Program?</label>
+                            <input type="text" class="track" id="estTimeline" name="estTimeline" autocomplete="off" required>
                         </li>
                         <li>
-                            <label for="quoteCount">How many quotes?</label>
-                            <input type="text" id="quoteCount" name="quoteCount" autocomplete="off" required>
+                            <label class="required" for="quoteCount">How many quotes?</label>
+                            <input type="text" class="track" id="quoteCount" name="quoteCount" autocomplete="off" required>
                         </li>
                         <li>
-                            <label for="itemDescription">Brief Item Description</label>
-                            <input type="text" id="itemDescription" name="itemDescription" autocomplete="off" required>
+                            <label class="required" for="itemDescription">Brief Item Description</label>
+                            <input type="text" class="track" id="itemDescription" name="itemDescription" autocomplete="off" required>
                         </li>
                         <li class="li-fix">
                             <div>
-                                <label for="implementation">Likelihood of Implementation</label>
+                                <label class="required" for="implementation">Likelihood of Implementation</label>
                             </div>
                             <div>
-                                <select name="implementation" id="implementation" required>
+                                <select class="track" name="implementation" id="implementation" required>
                                     <option value="" disabled selected>-</option>
                                     <option value="Not Likely">1-Not Likely</option>
                                     <option value="Depends on Pricing">3-Depends on Pricing</option>
@@ -110,25 +115,25 @@
                             </div>
                         </li>
                         <li class="">
-                            <label for="newOrComparable">New or comparable item?</label>
-                            <select name="newOrComparable" id="newOrComparable" required>
+                            <label class="required" for="newOrComparable">New or comparable item?</label>
+                            <select class="track" name="newOrComparable" id="newOrComparable" required>
                                 <option value="" disabled selected>-</option>
                                 <option value="new">New</option>
                                 <option value="comparable">Comparable</option>
                             </select>
                             <div class="selected-comparable">
                                 <label class="required optProductNameLabel" for=""></label>
-                                <input type="text" id="optProductName" name="optProductName" autocomplete="off" placeholder="Product Name">
+                                <input type="text" class="track" id="optProductName" name="optProductName" autocomplete="off" placeholder="Product Name">
                                 <label class="required optPartNumberLabel" for=""></label>
-                                <input type="text" id="optPartNumber" name="optPartNumber" autocomplete="off" placeholder="Part Number">
+                                <input type="text" class="track" id="optPartNumber" name="optPartNumber" autocomplete="off" placeholder="Part Number">
                             </div>
                         </li>
                         <li class="li-fix">
                             <div>
-                                <label for="componentOrFinished">Is this a Component or Finished Item?</label>
+                                <label class="required" for="componentOrFinished">Is this a Component or Finished Item?</label>
                             </div>
                             <div>
-                                <select name="" id="">
+                                <select class="track" name="" id="">
                                     <option value="" disabled selected>-</option>
                                     <option value="Component">Component</option>
                                     <option value="Finished">Finished</option>
