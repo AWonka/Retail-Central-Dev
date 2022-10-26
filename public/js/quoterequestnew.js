@@ -8,11 +8,37 @@ const optProductName = document.getElementById('optProductName');
 const optPartNumberLabel = document.querySelector('.optPartNumberLabel');
 const optPartNumber = document.getElementById('optPartNumber');
 
+const progressEl = document.querySelector('.progress-tracker');
+const numberEl = document.querySelector('.progress-number');
+const count = document.querySelectorAll('.track').length;
+let trackArr = [];
+let valueCount = 0;
+
 let addedProductForm = '';
 optProductNameLabel.style.display = 'none';
 optProductName.hidden = true;
 optPartNumberLabel.style.display = 'none';
 optPartNumber.hidden = true;
+
+addEventTracking();
+updateProgress();
+// addEventToTrack();
+
+function addEventTracking() {
+    let trackEl = document.querySelectorAll('.track');
+    trackEl.forEach((e) => {
+        trackArr.push(e);
+        e.addEventListener('change', () => {
+            console.log(valueCount);
+            if (!e.value) {
+                return;
+            } else {
+                valueCount++;
+                updateProgress();
+            }
+        });
+    });
+}
 
 // selecting product type
 productCategory.addEventListener('change', () => {
@@ -21,7 +47,13 @@ productCategory.addEventListener('change', () => {
 
     checkProductCategory(value);
     generateProductForm(value);
-    updateProgress();
+    addEventTracking();
+    // trackEl.forEach((e) => {
+    //     e.removeEventListener();
+    //     e.addEventListener('change', () => {
+    //         updateProgress();
+    //     })
+    // })
 });
 
 // selecting new or comparable item
@@ -55,24 +87,19 @@ function checkProductCategory(value) {
     }
 };
 
-updateProgress();
+// function addEventToTrack() {
+//     trackEl.forEach((e) => {
+//         e.addEventListener('change', () => {
+//             updateProgress();
+//         });
+//     });
+// };
 
 function updateProgress() {
-    const progressEl = document.querySelector('.progress-tracker');
-    const trackEl = document.querySelectorAll('.track');
-    const trackArr = [];
-    let valueCount = 0;
-    trackEl.forEach((e) => {
-        trackArr.push(e);
-        if (!e.value) {
-            return;
-        } else {
-            valueCount++;
-        }
-    });
-    const count = document.querySelectorAll('.track').length;
-    const done = Math.floor((valueCount / count) * 100);
+    const done = Math.floor((valueCount / trackArr.length) * 100);
     progressEl.style.width = done + "%";
+    numberEl.textContent = done + "%";
+    console.log(trackArr.length);
 };
 
 // only generates if mailers is selected as product category
@@ -381,7 +408,7 @@ function generateProductForm(value) {
                                         <option value="No">No</option>
                                     </select>
                                     <button id="mailerNeedPrintedBtn">Upload Artwork</button>
-                                    <a href=""></a>
+                                    <a href="">8000.jpg</a>
                                     <label class="required mailerFloodCoatLabel" for=""></label>
                                     <select class="track" name="" id="mailerFloodCoat">
                                         <option value="" disabled selected>-</option>
