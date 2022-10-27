@@ -91,11 +91,11 @@ if (document.title === "Accounting & Finance") {
 if (document.title === "Cold Chain") {
     var bannersData = [
         {
-            'src': '../../assets/images/cold-chain/Cold-Chain head-8.png',
+            'src': '../assets/images/cold-chain/Cold-Chain head-8.png',
             'alt': 'Cold Chain',
         },
         {
-            'src': '../../assets/images/converted paper/Converted-Paper-Capabilities-8.png',
+            'src': '../assets/images/converted paper/Converted-Paper-Capabilities-8.png',
             'alt': 'Converted Paper Capabilities'
         }
     ];
@@ -115,49 +115,49 @@ if (document.title === "Cold Chain") {
             'email': 'jkayne@prattindustries.com',
             'title': 'Director',
             'lead': true,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Kyle Kilch',
             'email': 'KKilch@prattindustries.com',
             'title': 'Account Manager',
             'lead': false,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Markel Graham',
             'email': 'mgraham2@prattindustries.com',
             'title': 'Senior Structural Packaging and Display Designer',
             'lead': false,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Stephanie Inman',
             'email': 'sinman@prattindustries.com',
             'title': 'Account Coordinator',
             'lead': false,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jessica Smith',
             'email': 'jsmith1@prattindustries.com',
             'title': 'Account Manager',
             'lead': false,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Lisa George',
             'email': 'lgeorge@prattindustries.com',
             'title': 'Account Coordinator',
             'lead': false,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Nikkole Cowan',
             'email': 'ncowan@prattindustries.com',
             'title': 'Account Coordinator',
             'lead': false,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
