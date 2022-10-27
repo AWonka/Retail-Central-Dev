@@ -150,7 +150,7 @@ if (document.title === "Cold Chain") {
             'email': 'lgeorge@prattindustries.com',
             'title': 'Account Coordinator',
             'lead': false,
-            'img': '../../assets/images/Profile-place-holder-8.png,
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Nikkole Cowan',
