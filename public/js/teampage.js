@@ -822,7 +822,7 @@ function generateEmployees() {
                 <p>${employee.title}</p>
                 <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt="${employee.email}"></a>
             `
-            
+
             membersEl.appendChild(teamMembersEl);
         }
 
