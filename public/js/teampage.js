@@ -87,6 +87,60 @@ if (document.title === "Accounting & Finance") {
     ];
 };
 
+// Cold Chain
+if (document.title === "Cold Chain") {
+    var bannersData = [
+        {
+            'src': '../../../assets/images/cold chain/Cold-Chain head-8.png',
+            'alt': 'Cold Chain',
+        },
+        {
+            'src': '/assets/images/converted paper/Converted-Paper-Capabilities-8.png',
+            'alt': 'Converted Paper Capabilities'
+        }
+    ];
+
+    // No utilities
+
+    var utilityData = [
+        {
+            'src': '',
+            'alt': ''
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Jay Rogers',
+            'email': 'jnrogers@prattindustries.com',
+            'title': 'President',
+            'lead': true,
+            'img': '/assets/images/converted paper/jay-rogers-fix.png',
+        },
+        {
+            'name': 'Kevin Kein',
+            'email': 'kkein@prattindustries.com',
+            'title': 'Sales Manager',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Karol Krahel',
+            'email': 'kkrahel@prattindustries.com',
+            'title': 'Marketing & Business Development',
+            'lead': false,
+            'img': '/assets/images/converted paper/karol-krahel-fix.png',
+        },
+        {
+            'name': 'Daniella Azevedo',
+            'email': 'dazevedo@prattindustries.com',
+            'title': 'Project Manager',
+            'lead': false,
+            'img': '/assets/images/Profile-place-holder-8.png',
+        }
+    ];
+};
+
 // Converted Paper
 if (document.title === "Converted Paper") {
     var bannersData = [
