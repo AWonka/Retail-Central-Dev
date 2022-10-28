@@ -804,7 +804,7 @@ function generateEmployees() {
                     <h2>Key Contact:</h2>
                     <p>${employee.name}</p>
                     <p>${employee.title}</p>
-                    <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt="${employee.email}"></a>
+                    <a href="mailto:${employee.email}"><img title="${employee.email}" src="../../assets/images/email-asset-128-fix.png" alt="${employee.email}"></a>
                 </div>
             `
 
@@ -820,7 +820,7 @@ function generateEmployees() {
                 <img class="member-img" src="${employee.img}" alt="${employee.name} image">
                 <p>${employee.name}</p>
                 <p>${employee.title}</p>
-                <a href="mailto:${employee.email}"><img title="${employee.email}" src="/assets/images/email-asset-128-fix.png" alt="${employee.email}"></a>
+                <a href="mailto:${employee.email}"><img title="${employee.email}" src="../../assets/images/email-asset-128-fix.png" alt="${employee.email}"></a>
             `
 
             membersEl.appendChild(teamMembersEl);
