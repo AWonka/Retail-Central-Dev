@@ -91,11 +91,11 @@ if (document.title === "Accounting & Finance") {
 if (document.title === "Cold Chain") {
     var bannersData = [
         {
-            'src': './public/assets/images/cold-chain/Cold-Chain head-8.png',
+            'src': './assets/images/cold-chain/Cold-Chain head-8.png',
             'alt': 'Cold Chain',
         },
         {
-            'src': './public/assets/images/cold-chain/Cold-Chain-Capabilities.PNG',
+            'src': './assets/images/cold-chain/Cold-Chain-Capabilities.png',
             'alt': 'Converted Paper Capabilities'
         }
     ];
