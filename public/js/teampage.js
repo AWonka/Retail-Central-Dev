@@ -751,14 +751,14 @@ generateEmployees();
 
 
 // generate header and capabilities banners
-function generateBanners() {
-    const headerBanner = bannersData[0];
+async function generateBanners() {
+    const headerBanner = await bannersData[0];
     
     const headerBannerEl = document.createElement('img');
     headerBannerEl.setAttribute('src', headerBanner.src);
     headerBannerEl.setAttribute('alt', headerBanner.alt);
 
-    const capabilitiesBanner = bannersData[1];
+    const capabilitiesBanner = await bannersData[1];
 
     const capabilitiesBannerEl = document.createElement('img');
     capabilitiesBannerEl.setAttribute('src', capabilitiesBanner.src);
