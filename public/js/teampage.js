@@ -91,11 +91,11 @@ if (document.title === "Accounting & Finance") {
 if (document.title === "Cold Chain") {
     var bannersData = [
         {
-            'src': 'https://github.com/AWonka/Retail-Central-Dev/blob/main/public/assets/images/cold-chain/Cold-Chain%20head-8.png',
+            'src': 'public/assets/images/cold-chain/Cold-Chain head-8.png',
             'alt': 'Cold Chain',
         },
         {
-            'src': 'https://github.com/AWonka/Retail-Central-Dev/blob/main/public/assets/images/cold-chain/Cold-Chain-Capabilities.png',
+            'src': 'public/assets/images/cold-chain/Cold-Chain-Capabilities.png',
             'alt': 'Converted Paper Capabilities'
         }
     ];
@@ -751,14 +751,14 @@ generateEmployees();
 
 
 // generate header and capabilities banners
-async function generateBanners() {
-    const headerBanner = await bannersData[0];
+function generateBanners() {
+    const headerBanner = bannersData[0];
     
     const headerBannerEl = document.createElement('img');
     headerBannerEl.setAttribute('src', headerBanner.src);
     headerBannerEl.setAttribute('alt', headerBanner.alt);
 
-    const capabilitiesBanner = await bannersData[1];
+    const capabilitiesBanner = bannersData[1];
 
     const capabilitiesBannerEl = document.createElement('img');
     capabilitiesBannerEl.setAttribute('src', capabilitiesBanner.src);
