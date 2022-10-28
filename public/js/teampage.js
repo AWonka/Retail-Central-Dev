@@ -91,7 +91,7 @@ if (document.title === "Accounting & Finance") {
 if (document.title === "Cold Chain") {
     var bannersData = [
         {
-            'src': 'Cold-Chain head-8.png',
+            'src': './Cold-Chain head-8.png',
             'alt': 'Cold Chain',
         },
         {
