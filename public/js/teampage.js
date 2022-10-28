@@ -95,7 +95,7 @@ if (document.title === "Cold Chain") {
             'alt': 'Cold Chain',
         },
         {
-            'src': './public/assets/images/cold-chain/Cold-Chain-Capabilities.png',
+            'src': '/public/assets/images/cold-chain/Cold-Chain-Capabilities.png',
             'alt': 'Converted Paper Capabilities'
         }
     ];
