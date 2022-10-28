@@ -91,11 +91,11 @@ if (document.title === "Accounting & Finance") {
 if (document.title === "Cold Chain") {
     var bannersData = [
         {
-            'src': 'https://awonka.github.io/Retail-Central-Dev/public/assets/images/cold-chain/Cold-Chain head-8.png',
+            'src': 'https://github.com/AWonka/Retail-Central-Dev/blob/main/public/assets/images/cold-chain/Cold-Chain%20head-8.png',
             'alt': 'Cold Chain',
         },
         {
-            'src': 'https://awonka.github.io/Retail-Central-Dev/public/assets/cold-chain/Cold-Chain-Capabilities.png',
+            'src': 'https://github.com/AWonka/Retail-Central-Dev/blob/main/public/assets/images/cold-chain/Cold-Chain-Capabilities.png',
             'alt': 'Converted Paper Capabilities'
         }
     ];
