@@ -91,7 +91,7 @@ if (document.title === "Accounting & Finance") {
 if (document.title === "Cold Chain") {
     var bannersData = [
         {
-            'src': '/public/assets/images/cold-chain/Cold-Chain%20head-8.png',
+            'src': 'https://awonka.github.io/Retail-Central-Dev/public/assets/images/cold-chain/Cold-Chain%20head-8.png',
             'alt': 'Cold Chain',
         },
         {
