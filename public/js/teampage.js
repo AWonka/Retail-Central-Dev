@@ -216,6 +216,60 @@ if (document.title === "Converted Paper") {
     ];
 };
 
+// Customer Service
+if (document.title === "Customer Service") {
+    var bannersData = [
+        {
+            'src': '../../assets/images/customer-service/Customer-Service-head-8.png',
+            'alt': 'Converted Paper',
+        },
+        {
+            'src': '../../assets/images/converted paper/Converted-Paper-Capabilities-8.png',
+            'alt': 'Converted Paper Capabilities'
+        }
+    ];
+
+    // No utilities
+
+    var utilityData = [
+        {
+            'src': '',
+            'alt': ''
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Jay Rogers',
+            'email': 'jnrogers@prattindustries.com',
+            'title': 'President',
+            'lead': true,
+            'img': '../../assets/images/converted paper/jay-rogers-fix.png',
+        },
+        {
+            'name': 'Kevin Kein',
+            'email': 'kkein@prattindustries.com',
+            'title': 'Sales Manager',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Karol Krahel',
+            'email': 'kkrahel@prattindustries.com',
+            'title': 'Marketing & Business Development',
+            'lead': false,
+            'img': '../../assets/images/converted paper/karol-krahel-fix.png',
+        },
+        {
+            'name': 'Daniella Azevedo',
+            'email': 'dazevedo@prattindustries.com',
+            'title': 'Project Manager',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        }
+    ];
+};
+
 // DATA AND ANALYTICS
 // ...NEED UTILITY BUTTON
 if (document.title === "Data & Analytics") {
@@ -349,6 +403,152 @@ if (document.title === "Design") {
     ];
 };
 
+// Emerging markets digital
+if (document.title === "Emerging Markets Digital") {
+    var bannersData = [
+        {
+            'src': '../../assets/images/digital/Digital-head-8.png',
+            'alt': 'Human Resources',
+        },
+        {
+            'src': '../../assets/images/emerging-markets/Emerging-markets-capabilities-8.png',
+            'alt': 'Human Resources Capabilities'
+        }
+    ];
+
+    var utilityData = [
+        {
+            'src': '',
+            'alt': ''
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Jamie Waltermire',
+            'email': 'jwaltermire@prattindustries.com',
+            'title': 'Need Title',
+            'lead': true,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Jeff Tuttle',
+            'email': 'jtuttle@prattindustries.com',
+            'title': 'Need Title',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Trint Beam',
+            'email': 'tbeam@prattindustries.com',
+            'title': 'Need Title',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Augusta Kirsche',
+            'email': 'akirsche@prattindustries.com',
+            'title': 'need title',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Kristen Ziglar',
+            'email': 'kziglar@prattindustries.com',
+            'title': 'Project Manager',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'David Denham',
+            'email': 'ddenham@prattindustries.com',
+            'title': 'Production',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Dustin Heuther',
+            'email': 'dhuether@prattindustries.com',
+            'title': 'Prepress',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Nathan Bailey',
+            'email': 'nbailey@prattindustries.com',
+            'title': 'Structure',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        }
+    ];
+};
+
+// Emerging markets Pratt Box
+if (document.title === "Emerging Markets Pratt Box") {
+    var bannersData = [
+        {
+            'src': '../../assets/images/digital/Digital-head-8.png',
+            'alt': 'Human Resources',
+        },
+        {
+            'src': '../../assets/images/emerging-markets/Emerging-markets-capabilities-8.png',
+            'alt': 'Human Resources Capabilities'
+        }
+    ];
+
+    var utilityData = [
+        {
+            'src': '../../assets/images/PrattBox-Digital.png',
+            'alt': 'Visit PrattBox.com'
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Brandon Kirchoff',
+            'email': 'bkirchoff@prattindustries.com',
+            'title': 'Need Title',
+            'lead': true,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Stan Johnson',
+            'email': 'spjohnson@prattindustries.com',
+            'title': 'Need Title',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Andrew Foreman',
+            'email': 'aforeman@prattindustries.com',
+            'title': 'Marketing',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Ben Naber',
+            'email': 'bnaber@prattindustries.com',
+            'title': 'Customer Service',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Major Filer',
+            'email': 'mfiler@prattindustries.com',
+            'title': 'Design',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'David Denham',
+            'email': 'ddenham@prattindustries.com',
+            'title': 'Production',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        }
+    ];
+};
+
 // HUMAN RESOURCES
 // ...NEED CAPABILITIES BANNER
 if (document.title === "Human Resources") {
@@ -476,6 +676,72 @@ if (document.title === "Inventory Analysis") {
     ];
 };
 
+// Logistics
+if (document.title === "Logistics") {
+    var bannersData = [
+        {
+            'src': '../../assets/images/logistics/Logistics head-8.png',
+            'alt': 'Inventory Analysis',
+        },
+        {
+            'src': '../../assets/images/inventory/Inventory-Capabilities-8.png',
+            'alt': 'Inventory Analysis Capabilities'
+        }
+    ];
+
+    var utilityData = [
+        {
+            'src': '',
+            'alt': ''
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Thomas Rives',
+            'email': 'trives@prattindustries.com',
+            'title': 'General Manager',
+            'lead': true,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Abril Gomez',
+            'email': 'aagomez@prattindustries.com',
+            'title': 'Operations Manager',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Lina Sihachack',
+            'email': 'lsihachack@prattindustries.com',
+            'title': 'Load Planner',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Adriana Medina',
+            'email': 'amedina2@prattindustries.com',
+            'title': 'Planner-PPD',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Shamarra Woods',
+            'email': 'swoods2@prattindustries.com',
+            'title': 'Load Planner',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Jerome Payne',
+            'email': 'jpayne@prattindustries.com',
+            'title': 'Logistics Manager',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        }
+    ];
+};
+
 // PPD
 if (document.title === "PPD") {
     var bannersData = [
@@ -568,6 +834,76 @@ if (document.title === "Quality") {
             'name': 'Patty Nichols',
             'email': 'pnichols@prattindustries.com',
             'title': 'Regional Quality Manager',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        }
+    ];
+};
+
+// Research and Development
+if (document.title === "Research & Development") {
+    var bannersData = [
+        {
+            'src': '../../assets/images/qa/QC head.png',
+            'alt': 'Quality',
+        },
+        {
+            'src': '../../assets/images/qa/QC-Capabilities.png',
+            'alt': 'Quality Capabilities'
+        }
+    ];
+
+    var utilityData = [
+        {
+            'src': '',
+            'alt': '',
+        },
+        {
+            'src': '',
+            'alt': ''
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Greg Sollie',
+            'email': 'gsollie@prattindustries.com',
+            'title': 'Director of Product Development/R&D',
+            'lead': true,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Shifeng Chen',
+            'email': 'schen@prattindustries.com',
+            'title': 'Structural Designer',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Don Joe Mikell',
+            'email': 'dmikell@prattindustries.com',
+            'title': 'Innovation Manager',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Paul Ott',
+            'email': 'pott@prattindustries.com',
+            'title': 'Senior Designer',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Alex Tanner',
+            'email': 'atanner@prattindustries.com',
+            'title': 'Process Engineer',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Martin Jackson',
+            'email': 'mjackson@prattindustries.com',
+            'title': 'Prototype Maker',
             'lead': false,
             'img': '../../assets/images/Profile-place-holder-8.png',
         }

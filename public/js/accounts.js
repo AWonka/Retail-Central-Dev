@@ -2,7 +2,7 @@
 if (document.title === "Clutter Inc") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/clutter/Clutter-head.png',
+            'src': '../../assets/images/accounts/clutter/Clutter-head.png',
         }
     ];
 
@@ -12,14 +12,14 @@ if (document.title === "Clutter Inc") {
             'email': 'znash@prattindustries.com',
             'title': 'Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jacksoun Routon',
             'email': 'jrouton@prattindustries.com',
             'title': 'Project Manager',
             'lead': false,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -28,7 +28,7 @@ if (document.title === "Clutter Inc") {
 if (document.title === "Do It Best") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/doitbest/DoItBest-Head.png',
+            'src': '../../assets/images/accounts/doitbest/DoItBest-Head.png',
         }
     ];
 
@@ -38,7 +38,7 @@ if (document.title === "Do It Best") {
             'email': 'jrouton@prattindustries.com',
             'title': 'Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -47,7 +47,7 @@ if (document.title === "Do It Best") {
 if (document.title === "Hobby Lobby") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/hobbylobby/hobby-lobby-head.png',
+            'src': '../../assets/images/accounts/hobbylobby/hobby-lobby-head.png',
         }
     ];
 
@@ -57,7 +57,7 @@ if (document.title === "Hobby Lobby") {
             'email': 'Jdenney@prattindustries.com',
             'title': 'Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -66,7 +66,7 @@ if (document.title === "Hobby Lobby") {
 if (document.title === "Home Depot") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/home depot/THD-Head.png',
+            'src': '../../assets/images/accounts/home depot/THD-Head.png',
         }
     ];
 
@@ -76,21 +76,21 @@ if (document.title === "Home Depot") {
             'email': 'rphilabaum@prattindustries.com',
             'title': 'National Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Brendan Rogers',
             'email': 'brogers@prattindustries.com',
             'title': 'Project Manager/Dotcom Lead',
             'lead': false,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Zach Nash',
             'email': 'znash@prattindustries.com',
             'title': 'Account Manager',
             'lead': false,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -99,7 +99,7 @@ if (document.title === "Home Depot") {
 if (document.title === "Home Depot Canada") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/home depot/THD-Head.png',
+            'src': '../../assets/images/accounts/home depot/THD-Head.png',
         }
     ];
 
@@ -109,7 +109,7 @@ if (document.title === "Home Depot Canada") {
             'email': 'rwreynolds@prattindustries.com',
             'title': 'Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -118,7 +118,7 @@ if (document.title === "Home Depot Canada") {
 if (document.title === "Office Depot") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/officedepot/OD-Head.png',
+            'src': '../../assets/images/accounts/officedepot/OD-Head.png',
         }
     ];
 
@@ -128,14 +128,14 @@ if (document.title === "Office Depot") {
             'email': 'jrouton@prattindustries.com',
             'title': 'Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jami Stanton',
             'email': 'jstanton@prattindustries.com',
             'title': 'Project Manager',
             'lead': false,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -144,7 +144,7 @@ if (document.title === "Office Depot") {
 if (document.title === "Petco") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/petco/Petco-Head.png',
+            'src': '../../assets/images/accounts/petco/Petco-Head.png',
         }
     ];
 
@@ -154,7 +154,7 @@ if (document.title === "Petco") {
             'email': 'sgeltner@prattindustries.com',
             'title': 'Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -163,7 +163,7 @@ if (document.title === "Petco") {
 if (document.title === "Public Storage") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/publicstorage/Public-Storage-head.png',
+            'src': '../../assets/images/accounts/publicstorage/Public-Storage-head.png',
         }
     ];
 
@@ -173,7 +173,7 @@ if (document.title === "Public Storage") {
             'email': 'lsmills@prattindustries.com',
             'title': 'Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -182,7 +182,7 @@ if (document.title === "Public Storage") {
 if (document.title === "The Container Store") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/publicstorage/Public-Storage-head.png',
+            'src': '../../assets/images/accounts/publicstorage/Public-Storage-head.png',
         }
     ];
 
@@ -192,7 +192,7 @@ if (document.title === "The Container Store") {
             'email': 'Jdenney@prattindustries.com',
             'title': 'Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -201,7 +201,7 @@ if (document.title === "The Container Store") {
 if (document.title === "USPS") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/usps/USPS-head.png',
+            'src': '../../assets/images/accounts/usps/USPS-head.png',
         }
     ];
 
@@ -211,14 +211,14 @@ if (document.title === "USPS") {
             'email': 'Jdenney@prattindustries.com',
             'title': 'Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jami Stanton',
             'email': 'jstanton@prattindustries.com',
             'title': 'Project Manager',
             'lead': false,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
@@ -227,7 +227,7 @@ if (document.title === "USPS") {
 if (document.title === "Walmart") {
     var bannersData = [
         {
-            'src': '/assets/images/accounts/walmart/Walmart-head.png',
+            'src': '../../assets/images/accounts/walmart/Walmart-head.png',
         }
     ];
 
@@ -237,35 +237,35 @@ if (document.title === "Walmart") {
             'email': 'vjcameron2@prattindustries.com',
             'title': 'National Account Manager',
             'lead': true,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Becca Iverson',
             'email': 'riverson@prattindustries.com',
             'title': 'Business Category Manager/Dotcom Lead',
             'lead': false,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Shane Stewart',
             'email': 'sstewart3@prattindustries.com',
             'title': 'Account Manager',
             'lead': false,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Jason Avila',
             'email': 'javila@prattindustries.com',
             'title': 'Supply Chain Analyst',
             'lead': false,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         },
         {
             'name': 'Kari Files',
             'email': 'kfiles@prattindustries.com',
             'title': 'Project Manager',
             'lead': false,
-            'img': '/assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/Profile-place-holder-8.png',
         }
     ];
 };
