@@ -47,7 +47,7 @@ if (document.title === "Do It Best") {
 if (document.title === "Hobby Lobby") {
     var bannersData = [
         {
-            'src': '../../assets/images/accounts/hobbylobby/hobby-lobby-head.png',
+            'src': '../../assets/images/accounts/hobbylobby/Hobby-lobby-head.png',
         }
     ];
 
