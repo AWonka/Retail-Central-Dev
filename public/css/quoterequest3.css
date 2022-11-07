@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    margin: 0;    
+    min-height: 100vh;
+}
+
+.container {
+    background-color: rgb(187, 189, 191);
+    width: 1500px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem auto;
+    padding: 1rem 2rem;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.product-type {
+    font-weight: bolder;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+    text-align: right;
+    margin: auto 0.5rem;
+}
+
+input,
+select {
+   height: 30px; 
+   padding: 0.3rem;
+   border: 1px solid black;
+   margin: auto 0;
+}
+
+.grayed-out {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.section {
+    background-color: #fff;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.section-information {
+    margin-right: 5rem;
+}
+
+.project-information ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.product-information-mailers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 10rem;
+}
+
+.product-information-mailers ul {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.product-information-mailers ul li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.shipping-info ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.shipping-info ul li:last-child {
+    display: flex;
+    justify-content: center;
+}
