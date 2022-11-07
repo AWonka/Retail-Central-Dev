@@ -54,8 +54,8 @@ function generateProductForm(e) {
                 <div class="section-information product-information-mailers">
                     <ul>
                         <li>
-                            <label for="">Product Size</label>
-                            <select class="required track" name="productSizeMailer" id="productSizeMailer" required>
+                            <label class="required" for="">Product Size</label>
+                            <select class="track" name="productSizeMailer" id="productSizeMailer" required>
                                 <option value="" disabled selected>-</option>
                                 <option value="#0">#0 (6.5 x 9)</option>
                                 <option value="#2">#2 (8.5 x 12)</option>
@@ -66,11 +66,11 @@ function generateProductForm(e) {
                         </li>
                         <li>
                             <label for=""></label>
-                            <input class="required track" type="text" id="productSizeMailerOther" name="productSizeMailerOther" autocomplete="off" placeholder="List Size" required>
+                            <input class="grayed-out" type="text" id="productSizeMailerOther" name="productSizeMailerOther" autocomplete="off" placeholder="List Size" disabled>
                         </li>
                         <li>
-                            <label for="">Mailer Type</label>
-                            <select class="required track" name="mailerType" id="mailerType" required>
+                            <label class="required" for="">Mailer Type</label>
+                            <select class="track" name="mailerType" id="mailerType" required>
                                 <option value="" disabled selected>-</option>
                                 <option value="Poly">Poly</option>
                                 <option value="Poly-Bubble">Poly-Bubble</option>
@@ -84,12 +84,12 @@ function generateProductForm(e) {
                             </select>
                         </li>
                         <li>
-                            <label for=""></label>
-                            <input class="required track" type="text" id="mailerTypeOther" name="mailerTypeOther" autocomplete="off" placeholder="List Type" required>
+                            <label class="" for=""></label>
+                            <input class="grayed-out" type="text" id="mailerTypeOther" name="mailerTypeOther" autocomplete="off" placeholder="List Type" disabled>
                         </li>
                         <li>
-                            <label for="">Plain or Printed?</label>
-                            <select class="required track" name="plainOrPrintedMailer" id="plainOrPrintedMailer" required>
+                            <label class="required" for="">Plain or Printed?</label>
+                            <select class="track" name="plainOrPrintedMailer" id="plainOrPrintedMailer" required>
                                 <option value="" disabled selected>-</option>
                                 <option value="Plain">Plain</option>
                                 <option value="Printed">Printed</option>
@@ -98,8 +98,8 @@ function generateProductForm(e) {
                     </ul>
                     <ul>
                         <li>
-                            <label for="">Upload Product Design here:</label>
-                            <button>Allowed file extensions are .pdf and .jpg</button>
+                        <label class="mailer-need-printed-label grayed-out" for="">Upload Product Design Here:</label>
+                        <input class="grayed-out" type="file" id="mailerNeedPrintedBtn" name="MailerNeedPrintedBtn" disabled>
                         </li>
                         <li>
                             <label class="finished-product-mailer-label grayed-out" for="">Finished Product</label>
@@ -111,8 +111,8 @@ function generateProductForm(e) {
                             </select>
                         </li>
                         <li>
-                            <label for=""></label>
-                            <input class="required track" type="text" id="pcsPerPackMailer" name="pcsPerPackMailer" autocomplete="off" placeholder="# OF PCS PER PACK" required>
+                            <label class="pcsPerPackMailerLabel grayed-out" for=""></label>
+                            <input class="grayed-out" type="text" id="pcsPerPackMailer" name="pcsPerPackMailer" autocomplete="off" placeholder="# OF PCS PER PACK" disabled>
                         </li>
                         <li>
                             <label class="pack-need-label-mailer-label grayed-out" for="">Packaging Label Needed?</label>
@@ -123,8 +123,8 @@ function generateProductForm(e) {
                             </select>
                         </li>
                         <li>
-                            <label for="">Upload Packaging Label Design Here:</label>
-                            <button>Allowed file extensions are .pdf and .jpg</button>
+                            <label class="pack-needs-label-label grayed-out" for="">Upload Packaging Label Design Here:</label>
+                            <input class="grayed-out" type="file" id="packNeedsLabelBtn" name="packNeedsLabelBtn" disabled>
                         </li>
                     </ul>
                 </div> 
@@ -137,8 +137,8 @@ function generateProductForm(e) {
                 <div class="section-information shipping-info">
                     <ul>
                         <li>
-                            <label for="">Shipping Type</label>
-                            <select class="track" name="shipToType" id="shipToType">
+                            <label class="required" for="">Shipping Type</label>
+                            <select class="track" name="shipToType" id="shipToType" required>
                                 <option value="" disabled selected>-</option>
                                 <option value="DC">DC</option>
                                 <option value="Other Address">Other Address</option>
@@ -186,21 +186,98 @@ function generateScripts(e) {
         const finishedProductMailerEl = document.getElementById('finishedProductMailer');
         const packNeedLabelMailerLabel = document.querySelector('.pack-need-label-mailer-label');
         const packNeedLabelMailerEl = document.getElementById('packNeedLabelMailer');
+        const pcsPerPackMailerLabel = document.querySelector('.pcsPerPackMailerLabel');
+        const pcsPerPackMailerEl = document.getElementById('pcsPerPackMailer');
+        const packNeedsLabelLabel = document.querySelector('.pack-needs-label-label');
+        const packNeedsLabelBtn = document.getElementById('packNeedsLabelBtn');
 
         rawOrFinishedEl.addEventListener('change', () => {
             const value = rawOrFinishedEl.value;
         
             if (value === 'Finished') {
                 finishedProductMailerLabel.classList.remove('grayed-out');
+                finishedProductMailerLabel.classList.add('required');
                 finishedProductMailerEl.classList.remove('grayed-out');
-                finishedProductMailerEl.classList.add('required', 'track');
+                finishedProductMailerEl.classList.add('track');
                 finishedProductMailerEl.disabled = false;
                 finishedProductMailerEl.required = true;
                 packNeedLabelMailerLabel.classList.remove('grayed-out');
+                packNeedLabelMailerLabel.classList.add('required');
                 packNeedLabelMailerEl.classList.remove('grayed-out');
-                packNeedLabelMailerEl.classList.add('required', 'track');
+                packNeedLabelMailerEl.classList.add('track');
                 packNeedLabelMailerEl.disabled = false;
                 packNeedLabelMailerEl.required = true;
+            }
+            else {
+                finishedProductMailerLabel.classList.add('grayed-out');
+                finishedProductMailerLabel.classList.remove('required');
+                finishedProductMailerEl.classList.add('grayed-out');
+                finishedProductMailerEl.classList.remove('track');
+                finishedProductMailerEl.value = '';
+                finishedProductMailerEl.disabled = true;
+                finishedProductMailerEl.required = false;
+                packNeedLabelMailerLabel.classList.add('grayed-out');
+                packNeedLabelMailerLabel.classList.remove('required');
+                packNeedLabelMailerEl.classList.add('grayed-out');
+                packNeedLabelMailerEl.classList.remove('track');
+                packNeedLabelMailerEl.value = '';
+                packNeedLabelMailerEl.disabled = true;
+                packNeedLabelMailerEl.required = false;
+                pcsPerPackMailerLabel.classList.add('grayed-out');
+                pcsPerPackMailerLabel.classList.remove('required');
+                pcsPerPackMailerEl.classList.add('grayed-out');
+                pcsPerPackMailerEl.classList.remove('track');
+                pcsPerPackMailerEl.value = '';
+                pcsPerPackMailerEl.disabled = true;
+                pcsPerPackMailerEl.required = false;
+                packNeedsLabelLabel.classList.add('grayed-out');
+                packNeedsLabelLabel.classList.remove('required');
+                packNeedsLabelBtn.classList.add('grayed-out');
+                packNeedsLabelBtn.classList.remove('track');
+                packNeedsLabelBtn.disabled = true;
+                packNeedsLabelBtn.required = false;
+            }
+        });
+
+        finishedProductMailerEl.addEventListener('change', () => {
+            const value = finishedProductMailerEl.value;
+
+            if (value === 'Shrink Pack' || value === 'Banded Pack') {
+                pcsPerPackMailerLabel.classList.remove('grayed-out');
+                pcsPerPackMailerLabel.classList.add('required');
+                pcsPerPackMailerEl.classList.remove('grayed-out');
+                pcsPerPackMailerEl.classList.add('track');
+                pcsPerPackMailerEl.disabled = false;
+                pcsPerPackMailerEl.required = true;
+            }
+            else {
+                pcsPerPackMailerLabel.classList.add('grayed-out');
+                pcsPerPackMailerLabel.classList.remove('required');
+                pcsPerPackMailerEl.classList.add('grayed-out');
+                pcsPerPackMailerEl.classList.remove('track');
+                pcsPerPackMailerEl.disabled = true;
+                pcsPerPackMailerEl.required = false;
+            }
+        });
+
+        packNeedLabelMailerEl.addEventListener('change', () => {
+            const value = packNeedLabelMailerEl.value;
+
+            if (value === 'Yes') {
+                packNeedsLabelLabel.classList.remove('grayed-out');
+                packNeedsLabelLabel.classList.add('required');
+                packNeedsLabelBtn.classList.remove('grayed-out');
+                packNeedsLabelBtn.classList.add('track');
+                packNeedsLabelBtn.disabled = false;
+                packNeedsLabelBtn.required = true;
+            }
+            else {
+                packNeedsLabelLabel.classList.add('grayed-out');
+                packNeedsLabelLabel.classList.remove('required');
+                packNeedsLabelBtn.classList.add('grayed-out');
+                packNeedsLabelBtn.classList.remove('track');
+                packNeedsLabelBtn.disabled = true;
+                packNeedsLabelBtn.required = false;
             }
         });
     }
