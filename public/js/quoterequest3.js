@@ -176,12 +176,11 @@ function generateProductForm(e) {
             </div>
         `
         productForm.append(generateDiv);
-        generateScripts(e);
+        generateMailerScripts();
     }
 };
 
-function generateScripts(e) {
-    if (e === 'Mailers') {
+function generateMailerScripts() {
         const finishedProductMailerLabel = document.querySelector('.finished-product-mailer-label');
         const finishedProductMailerEl = document.getElementById('finishedProductMailer');
         const packNeedLabelMailerLabel = document.querySelector('.pack-need-label-mailer-label');
@@ -255,6 +254,7 @@ function generateScripts(e) {
                 pcsPerPackMailerLabel.classList.remove('required');
                 pcsPerPackMailerEl.classList.add('grayed-out');
                 pcsPerPackMailerEl.classList.remove('track');
+                pcsPerPackMailerEl.value = '';
                 pcsPerPackMailerEl.disabled = true;
                 pcsPerPackMailerEl.required = false;
             }
@@ -280,5 +280,4 @@ function generateScripts(e) {
                 packNeedsLabelBtn.required = false;
             }
         });
-    }
 };
