@@ -33,10 +33,20 @@ newOrExistingEl.addEventListener('change', () => {
 
     if (value === 'Existing') {
         existingItemNumberLabel.classList.remove('grayed-out');
+        existingItemNumberLabel.classList.add('required');
         existingItemNumberEl.classList.remove('grayed-out');
-        existingItemNumberEl.classList.add('required', 'track');
+        existingItemNumberEl.classList.add('track');
         existingItemNumberEl.disabled = false;
         existingItemNumberEl.required = true;
+    }
+    else {
+        existingItemNumberLabel.classList.add('grayed-out');
+        existingItemNumberLabel.classList.remove('required');
+        existingItemNumberEl.classList.add('grayed-out');
+        existingItemNumberEl.classList.remove('track');
+        existingItemNumberEl.value = '';
+        existingItemNumberEl.disabled = true;
+        existingItemNumberEl.required = false;
     }
 });
 
@@ -65,7 +75,7 @@ function generateProductForm(e) {
                             </select>
                         </li>
                         <li>
-                            <label for=""></label>
+                            <label class="product-size-mailer-other-label" for=""></label>
                             <input class="grayed-out" type="text" id="productSizeMailerOther" name="productSizeMailerOther" autocomplete="off" placeholder="List Size" disabled>
                         </li>
                         <li>
@@ -84,7 +94,7 @@ function generateProductForm(e) {
                             </select>
                         </li>
                         <li>
-                            <label class="" for=""></label>
+                            <label class="mailerTypeOtherLabel" for=""></label>
                             <input class="grayed-out" type="text" id="mailerTypeOther" name="mailerTypeOther" autocomplete="off" placeholder="List Type" disabled>
                         </li>
                         <li>
@@ -147,8 +157,8 @@ function generateProductForm(e) {
                             </select>
                         </li>
                         <li>
-                            <label for="">Select DC</label>
-                            <select class="track" name="shipToDc" id="shipToDc">
+                            <label class="ship-to-dc-label" for="" hidden=true>Select DC</label>
+                            <select class="" name="shipToDc" id="shipToDc" hidden=true disabled>
                                 <option value="" disabled selected>-</option>
                                 <option value="47 Conyers">47 Conyers</option>
                                 <option value="TX Dallas">TX Dallas</option>
@@ -167,9 +177,12 @@ function generateProductForm(e) {
                             </select>
                         </li>
                         <li>
-                            <input class="" type="text" id="shipToAddress" name="shipToAddress" autocomplete="off" placeholder="Enter Address">
-                            <input class="" type="text" id="shipToDropship" name="shipToDropship" autocomplete="off" placeholder="Enter Dropship">
-                            <input class="" type="text" id="shipToPickup" name="shipToPickup" autocomplete="off" placeholder="Who will pick it up?">
+                            <label class="ship-to-address-label" for="" hidden=true></label>
+                            <input class="" type="text" id="shipToAddress" name="shipToAddress" autocomplete="off" placeholder="Enter Address" hidden=true>
+                            <label class="ship-to-dropship-label required" for="" hidden=true></label>
+                            <input class="" type="text" id="shipToDropship" name="shipToDropship" autocomplete="off" placeholder="Enter Dropship" hidden=true>
+                            <label class="ship-to-pickup-label required" for="" hidden=true></label>
+                            <input class="" type="text" id="shipToPickup" name="shipToPickup" autocomplete="off" placeholder="Who will pick it up?" hidden=true>
                         </li>
                     </ul>
                 </div>
@@ -177,10 +190,153 @@ function generateProductForm(e) {
         `
         productForm.append(generateDiv);
         generateMailerScripts();
+        generateShippingScripts();
     }
 };
 
+function generateShippingScripts() {
+    const shipToTypeEl = document.getElementById('shipToType');
+    const shipToDcLabel = document.querySelector('.ship-to-dc-label');
+    const shipToDcEl = document.getElementById('shipToDc');
+    const shipToAddressLabel = document.querySelector('.ship-to-address-label');
+    const shipToAddressEl = document.getElementById('shipToAddress');
+    const shipToDropshipLabel = document.querySelector('.ship-to-dropship-label');
+    const shipToDropshipEl = document.getElementById('shipToDropship');
+    const shipToPickupLabel = document.querySelector('.ship-to-pickup-label');
+    const shipToPickupEl = document.getElementById('shipToPickup');
+
+    shipToTypeEl.addEventListener('change', () => {
+        const value = shipToTypeEl.value;
+
+        if (value === 'DC') {
+            shipToDcLabel.hidden = false;
+            shipToDcLabel.classList.add('required');
+            shipToDcEl.hidden = false;
+            shipToDcEl.disabled = false;
+            shipToDcEl.required = true;
+            shipToDcEl.classList.add('track');
+            shipToAddressLabel.classList.remove('required');
+            shipToAddressLabel.hidden = true;
+            shipToAddressEl.classList.remove('track');
+            shipToAddressEl.value = '';
+            shipToAddressEl.disabled = true;
+            shipToAddressEl.hidden = true;
+            shipToAddressEl.required = false;
+            shipToDropshipLabel.classList.remove('required');
+            shipToDropshipLabel.hidden = true;
+            shipToDropshipEl.classList.remove('track');
+            shipToDropshipEl.value = '';
+            shipToDropshipEl.hidden = true;
+            shipToDropshipEl.disabled = true;
+            shipToDropshipEl.required = false;
+            shipToPickupLabel.classList.remove('required');
+            shipToPickupLabel.hidden = true;
+            shipToPickupEl.classList.remove('track');
+            shipToPickupEl.value = '';
+            shipToPickupEl.hidden = true;
+            shipToPickupEl.disabled = true;
+            shipToPickupEl.required = false;
+        }
+        else if (value === 'Other Address') {
+            shipToDcLabel.hidden = true;
+            shipToDcLabel.classList.remove('required');
+            shipToDcEl.value = '';
+            shipToDcEl.hidden = true;
+            shipToDcEl.disabled = true;
+            shipToDcEl.required = false;
+            shipToDcEl.classList.remove('track');
+            shipToAddressLabel.classList.add('required');
+            shipToAddressLabel.hidden = false;
+            shipToAddressEl.classList.add('track');
+            shipToAddressEl.disabled = false;
+            shipToAddressEl.hidden = false;
+            shipToAddressEl.required = true;
+            shipToDropshipLabel.classList.remove('required');
+            shipToDropshipLabel.hidden = true;
+            shipToDropshipEl.classList.remove('track');
+            shipToDropshipEl.value = '';
+            shipToDropshipEl.hidden = true;
+            shipToDropshipEl.disabled = true;
+            shipToDropshipEl.required = false;
+            shipToPickupLabel.classList.remove('required');
+            shipToPickupLabel.hidden = true;
+            shipToPickupEl.classList.remove('track');
+            shipToPickupEl.value = '';
+            shipToPickupEl.hidden = true;
+            shipToPickupEl.disabled = true;
+            shipToPickupEl.required = false;
+        }
+        else if (value === 'Dropship') {
+            shipToDcLabel.hidden = true;
+            shipToDcLabel.classList.remove('required');
+            shipToDcEl.value = '';
+            shipToDcEl.hidden = true;
+            shipToDcEl.disabled = true;
+            shipToDcEl.required = false;
+            shipToDcEl.classList.remove('track');
+            shipToAddressLabel.classList.remove('required');
+            shipToAddressLabel.hidden = true;
+            shipToAddressEl.classList.remove('track');
+            shipToAddressEl.value = '';
+            shipToAddressEl.disabled = true;
+            shipToAddressEl.hidden = true;
+            shipToAddressEl.required = false;
+            shipToDropshipLabel.classList.add('required');
+            shipToDropshipLabel.hidden = false;
+            shipToDropshipEl.classList.add('track');
+            shipToDropshipEl.hidden = false;
+            shipToDropshipEl.disabled = false;
+            shipToDropshipEl.required = true;
+            shipToPickupLabel.classList.remove('required');
+            shipToPickupLabel.hidden = true;
+            shipToPickupEl.classList.remove('track');
+            shipToPickupEl.value = '';
+            shipToPickupEl.hidden = true;
+            shipToPickupEl.disabled = true;
+            shipToPickupEl.required = false;
+        }
+        else {
+            shipToDcLabel.hidden = true;
+            shipToDcLabel.classList.remove('required');
+            shipToDcEl.value = '';
+            shipToDcEl.hidden = true;
+            shipToDcEl.disabled = true;
+            shipToDcEl.required = false;
+            shipToDcEl.classList.remove('track');
+            shipToAddressLabel.classList.remove('required');
+            shipToAddressLabel.hidden = true;
+            shipToAddressEl.classList.remove('track');
+            shipToAddressEl.value = '';
+            shipToAddressEl.disabled = true;
+            shipToAddressEl.hidden = true;
+            shipToAddressEl.required = false;
+            shipToDropshipLabel.classList.remove('required');
+            shipToDropshipLabel.hidden = true;
+            shipToDropshipEl.classList.remove('track');
+            shipToDropshipEl.value = '';
+            shipToDropshipEl.hidden = true;
+            shipToDropshipEl.disabled = true;
+            shipToDropshipEl.required = false;
+            shipToPickupLabel.classList.add('required');
+            shipToPickupLabel.hidden = false;
+            shipToPickupEl.classList.add('track');
+            shipToPickupEl.hidden = false;
+            shipToPickupEl.disabled = false;
+            shipToPickupEl.required = true;
+        }
+    });
+}
+
 function generateMailerScripts() {
+        const productSizeMailerEl = document.getElementById('productSizeMailer');
+        const productSizeMailerOtherLabel = document.querySelector('.product-size-mailer-other-label');
+        const productSizeMailerOtherEl = document.getElementById('productSizeMailerOther');
+        const mailerTypeEl = document.getElementById('mailerType');
+        const mailerTypeOtherLabel = document.querySelector('.mailerTypeOtherLabel');
+        const mailerTypeOtherEl = document.getElementById('mailerTypeOther');
+        const plainOrPrintedMailerEl = document.getElementById('plainOrPrintedMailer');
+        const mailerNeedPrintedLabelLabel = document.querySelector('.mailer-need-printed-label');
+        const mailerNeedPrintedEl = document.getElementById('mailerNeedPrintedBtn');
         const finishedProductMailerLabel = document.querySelector('.finished-product-mailer-label');
         const finishedProductMailerEl = document.getElementById('finishedProductMailer');
         const packNeedLabelMailerLabel = document.querySelector('.pack-need-label-mailer-label');
@@ -238,6 +394,64 @@ function generateMailerScripts() {
             }
         });
 
+        productSizeMailerEl.addEventListener('change', () => {
+            const value = productSizeMailerEl.value;
+
+            if (value === 'Other') {
+                productSizeMailerOtherLabel.classList.add('required');
+                productSizeMailerOtherEl.classList.remove('grayed-out');
+                productSizeMailerOtherEl.classList.add('track');
+                productSizeMailerOtherEl.disabled = false;
+                productSizeMailerOtherEl.required = true;
+            }
+            else {
+                productSizeMailerOtherLabel.classList.remove('required');
+                productSizeMailerOtherEl.classList.add('grayed-out');
+                productSizeMailerOtherEl.classList.remove('track');
+                productSizeMailerOtherEl.value = '';
+                productSizeMailerOtherEl.disabled = true;
+                productSizeMailerOtherEl.required = false;
+            }
+        });
+
+        mailerTypeEl.addEventListener('change', () => {
+            const value = mailerTypeEl.value;
+
+            if (value === 'Other') {
+                mailerTypeOtherLabel.classList.add('required');
+                mailerTypeOtherEl.classList.remove('grayed-out');
+                mailerTypeOtherEl.disabled = false;
+                mailerTypeOtherEl.required = true;
+            }
+            else {
+                mailerTypeOtherLabel.classList.remove('required');
+                mailerTypeOtherEl.classList.add('grayed-out');
+                mailerTypeOtherEl.value = '';
+                mailerTypeOtherEl.disabled = true;
+                mailerTypeOtherEl.required = false;
+            }
+        });
+
+        plainOrPrintedMailerEl.addEventListener('change', () => {
+            const value = plainOrPrintedMailerEl.value;
+
+            if (value === 'Printed') {
+                mailerNeedPrintedLabelLabel.classList.remove('grayed-out');
+                mailerNeedPrintedLabelLabel.classList.add('required');
+                mailerNeedPrintedEl.classList.remove('grayed-out');
+                mailerNeedPrintedEl.disabled = false;
+                mailerNeedPrintedEl.required = true;
+            }
+            else {
+                mailerNeedPrintedLabelLabel.classList.add('grayed-out');
+                mailerNeedPrintedLabelLabel.classList.remove('required');
+                mailerNeedPrintedEl.classList.add('grayed-out');
+                mailerNeedPrintedEl.value = '';
+                mailerNeedPrintedEl.disabled = true;
+                mailerNeedPrintedEl.required = false;
+            }
+        });
+
         finishedProductMailerEl.addEventListener('change', () => {
             const value = finishedProductMailerEl.value;
 
@@ -276,6 +490,7 @@ function generateMailerScripts() {
                 packNeedsLabelLabel.classList.remove('required');
                 packNeedsLabelBtn.classList.add('grayed-out');
                 packNeedsLabelBtn.classList.remove('track');
+                packNeedsLabelBtn.value = '';
                 packNeedsLabelBtn.disabled = true;
                 packNeedsLabelBtn.required = false;
             }
