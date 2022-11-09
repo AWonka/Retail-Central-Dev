@@ -64,6 +64,21 @@ select {
     cursor: not-allowed;
 }
 
+.progress-bar {
+    position: fixed;
+    right: 36%;
+    width: 500px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.progress-tracker {
+    text-align: center;
+    background-color: green;
+}
+
 .section {
     background-color: #fff;
     border: 1px solid black;
