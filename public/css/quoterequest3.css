@@ -66,17 +66,35 @@ select {
 
 .progress-bar {
     position: fixed;
-    right: 36%;
+    left: 50%;
     width: 500px;
     height: 20px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 5px;
     background-color: white;
+    transform: translate(-50%, 0);
 }
 
 .progress-tracker {
     text-align: center;
     background-color: green;
+    max-height: 100%;
+}
+
+.save-btn {
+    position: fixed;
+    left: 50%;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    transition: 200ms ease-in-out;
+    transform: translate(-50%, 0);
+}
+
+.save-btn:hover {
+    transform: scale(1.2);
 }
 
 .section {

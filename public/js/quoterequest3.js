@@ -17,13 +17,32 @@ let valueCount = 0;
 progressEl.style.width = 0 + '%';
 numberEl.textContent = 0 + '%';
 
-// addEventTracking();
-// updateProgress();
-
 setInterval(() => {
     trackEl = document.querySelectorAll('.track');
     addTracking();
 }, 2000);
+
+function addTracking() {
+    trackArr = [];
+    trackEl.forEach((e) => {
+        trackArr.push(e);
+        if (e.value.length > 0) {
+            e.classList.add('done');
+        }
+        if (e.value.length === 0) {
+            e.classList.remove('done');
+        }
+        updateProgress(e);
+    })
+    console.log(trackArr.length);
+}
+
+function updateProgress(e) {
+    let done = document.querySelectorAll('.done');
+    let myFormula = Math.floor((done.length / trackArr.length) * 100);
+    progressEl.style.width = myFormula + '%';
+    numberEl.textContent = myFormula + '%';
+};
 
 productCategory.addEventListener('change', () => {
     const value = productCategory.value;
@@ -63,28 +82,6 @@ newOrExistingEl.addEventListener('change', () => {
         existingItemNumberEl.required = false;
     }
 });
-
-function addTracking() {
-    trackArr = [];
-    trackEl.forEach((e) => {
-        trackArr.push(e);
-        if (e.value.length > 0) {
-            e.classList.add('done');
-        }
-        if (e.value.length === 0) {
-            e.classList.remove('done');
-        }
-        updateProgress(e);
-    })
-    console.log(trackArr.length);
-}
-
-function updateProgress(e) {
-    let done = document.querySelectorAll('.done');
-    let myFormula = Math.floor((done.length / trackArr.length) * 100);
-    progressEl.style.width = myFormula + '%';
-    numberEl.textContent = myFormula + '%';
-};
 
 function generateProductForm(e) {
     // Mailer
