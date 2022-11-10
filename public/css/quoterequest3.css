@@ -69,7 +69,7 @@ select {
     left: 50%;
     width: 500px;
     height: 20px;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 5px;
     background-color: white;
     transform: translate(-50%, 0);
@@ -82,19 +82,38 @@ select {
 }
 
 .save-btn {
-    position: fixed;
-    left: 50%;
-    padding: 0.5rem;
-    border: 2px solid black;
+    padding: 0.3rem;
+    border: 1px solid black;
     border-radius: 5px;
     background-color: blue;
     color: white;
-    transition: 200ms ease-in-out;
-    transform: translate(-50%, 0);
+    cursor: pointer;
+    transition: 150ms ease-in-out;
 }
 
 .save-btn:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.submit-div {
+    width: 100%;
+    text-align: center;
+}
+
+.submit-btn {
+    width: 20%;
+    padding: 0.8rem;
+    background-color: red;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 150ms ease-in-out;
+}
+
+.submit-btn:hover {
+    transform: scale(1.1);
 }
 
 .section {
