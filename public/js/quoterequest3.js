@@ -1,5 +1,9 @@
 const formEl = document.querySelector('form');
 const productForm = document.querySelector('.product-form');
+const element = document.getElementById('element-to-print');
+const opt = {
+    margin: 2
+}
 
 const productCategory = document.getElementById('pCategory');
 const newOrExistingLabel = document.querySelector('.new-or-existing-label');
@@ -528,4 +532,24 @@ function generateMailerScripts() {
                 packNeedsLabelBtn.required = false;
             }
         });
+
+        mailerNeedPrintedEl.onchange = function (evt) {
+            let tgt = evt.target || window.event.target,
+                files = tgt.files;
+
+                if (FileReader && files && files.length) {
+                    let fr = new FileReader();
+                    fr.onload = function () {
+                        document.getElementById('testImg').src = fr.result;
+                    }
+                    fr.readAsDataURL(files[0]);
+                }
+                else {
+                    window.prompt('Error uploading image, please email Jim Knight the image with the project name');
+                }
+        }
+};
+
+function generatePdf() {
+    html2pdf().set(opt).from(element).save();
 };

@@ -7,6 +7,7 @@
     <title>Quote Request 3</title>
     <link rel="stylesheet" href="../../css/quoterequest3.css">
     <script src="../../js/quoterequest3.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <div class="container">
@@ -16,7 +17,7 @@
             </div>
             <button class="save-btn">Save For Later</button>
         </div>
-        <form action="">
+        <form action="" id="element-to-print" enctype="application/pdf" class="form-control">
             <div class="section">
                 <div class="section-header">
                     <h2>Project Information</h2>
@@ -208,8 +209,9 @@
                 </div>
             </div> -->
             <div class="submit-div">
-                <button type="submit" class="submit-btn">Submit</button>
+                <button type="submit" class="submit-btn" onclick="generatePdf()" value="GeneratePdf">Submit</button>
             </div>
+            <img src="" alt="" id="testImg">
         </form>
     </div>
 </body>
