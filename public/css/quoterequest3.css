@@ -166,3 +166,27 @@ select {
     display: flex;
     justify-content: center;
 }
+
+/* .image-section {
+    display: none;
+} */
+
+.section-images ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.section-images ul li {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+}
+
+.section-images ul li label {
+    margin: auto;
+}
+
+.section-images ul li img {
+    width: 80%;
+    margin: 1rem auto;
+}

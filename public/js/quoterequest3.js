@@ -1,5 +1,6 @@
 const formEl = document.querySelector('form');
 const productForm = document.querySelector('.product-form');
+const imageForm = document.querySelector('.image-form');
 const element = document.getElementById('element-to-print');
 const opt = {
     margin: 2
@@ -224,6 +225,26 @@ function generateProductForm(e) {
                     </ul>
                 </div>
             </div>
+
+            <div class="image-form">
+                <div class="section image-section" hidden=true>
+                    <div class="section-header">
+                        <h2>Images</h2>
+                    </div>
+                    <div class="section-information section-images">
+                        <ul>
+                            <li>
+                                <label for="">Mailer Image</label>
+                                <img class="mailer-img-1" src="" alt="">
+                            </li>
+                            <li>
+                                <label for="">Packaging Label</label>
+                                <img class="mailer-img-2" src="" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         `
         productForm.append(generateDiv);
         generateMailerScripts();
@@ -382,6 +403,10 @@ function generateMailerScripts() {
         const pcsPerPackMailerEl = document.getElementById('pcsPerPackMailer');
         const packNeedsLabelLabel = document.querySelector('.pack-needs-label-label');
         const packNeedsLabelBtn = document.getElementById('packNeedsLabelBtn');
+        const imageSection = document.querySelector('.image-section');
+
+        let mailerImgOne = document.querySelector('.mailer-img-1');
+        let mailerImgTwo = document.querySelector('.mailer-img-2');
 
         rawOrFinishedEl.addEventListener('change', () => {
             const value = rawOrFinishedEl.value;
@@ -471,6 +496,7 @@ function generateMailerScripts() {
 
         plainOrPrintedMailerEl.addEventListener('change', () => {
             const value = plainOrPrintedMailerEl.value;
+            
 
             if (value === 'Printed') {
                 mailerNeedPrintedLabelLabel.classList.remove('grayed-out');
@@ -486,7 +512,9 @@ function generateMailerScripts() {
                 mailerNeedPrintedEl.value = '';
                 mailerNeedPrintedEl.disabled = true;
                 mailerNeedPrintedEl.required = false;
+                mailerImgOne.src = '';
             }
+            mailerImgCheck(mailerNeedPrintedEl, packNeedsLabelBtn, imageSection);
         });
 
         finishedProductMailerEl.addEventListener('change', () => {
@@ -513,6 +541,7 @@ function generateMailerScripts() {
 
         packNeedLabelMailerEl.addEventListener('change', () => {
             const value = packNeedLabelMailerEl.value;
+            
 
             if (value === 'Yes') {
                 packNeedsLabelLabel.classList.remove('grayed-out');
@@ -530,24 +559,52 @@ function generateMailerScripts() {
                 packNeedsLabelBtn.value = '';
                 packNeedsLabelBtn.disabled = true;
                 packNeedsLabelBtn.required = false;
+                mailerImgTwo.src = '';
             }
+            mailerImgCheck(mailerNeedPrintedEl, packNeedsLabelBtn, imageSection);
         });
 
         mailerNeedPrintedEl.onchange = function (evt) {
             let tgt = evt.target || window.event.target,
                 files = tgt.files;
 
-                if (FileReader && files && files.length) {
+                if (FileReader && files) {
                     let fr = new FileReader();
                     fr.onload = function () {
-                        document.getElementById('testImg').src = fr.result;
+                        mailerImgOne.src = fr.result;
                     }
                     fr.readAsDataURL(files[0]);
                 }
                 else {
                     window.prompt('Error uploading image, please email Jim Knight the image with the project name');
                 }
-        }
+                // mailerImgCheck(mailerImgOne, mailerImgTwo, imageSection);
+        };
+
+        packNeedsLabelBtn.onchange = function (evt) {
+            let tgt = evt.target || window.event.target,
+                files = tgt.files;
+
+                if (FileReader && files) {
+                    let fr = new FileReader();
+                    fr.onload = function () {
+                        mailerImgTwo.src = fr.result;
+                    }
+                    fr.readAsDataURL(files[0]);
+                }
+                else {
+                    window.prompt('Error uploading image, please email Jim Knight the image with the project name');
+                }
+                // mailerImgCheck(mailerImgOne, mailerImgTwo, imageSection);
+        };
+};
+
+function mailerImgCheck(e1, e2, el) {
+    if (!e1.disabled || !e2.disabled) {
+        el.hidden = false;
+    } else {
+        el.hidden = true;
+    }
 };
 
 function generatePdf() {
