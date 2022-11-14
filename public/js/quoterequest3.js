@@ -3,8 +3,9 @@ const productForm = document.querySelector('.product-form');
 const imageForm = document.querySelector('.image-form');
 const element = document.getElementById('element-to-print');
 const opt = {
-    margin: 2
-}
+    margin: 3,
+    jsPDF: { format: 'a3'}
+};
 
 const productCategory = document.getElementById('pCategory');
 const newOrExistingLabel = document.querySelector('.new-or-existing-label');
@@ -178,7 +179,7 @@ function generateProductForm(e) {
                 </div> 
             </div>
 
-            <div class="section">
+            <div class="section html2pdf__page-break">
                 <div class="section-header">
                     <h2>Shipping Information</h2>
                 </div>
