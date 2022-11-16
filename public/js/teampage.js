@@ -1027,7 +1027,8 @@ if (document.title === "Sourcing") {
     var utilityData = [
         {
             'src': '../../assets/images/Quote Request-Sourcing.png',
-            'alt': 'Quote Request Button'
+            'alt': 'Quote Request Button',
+            'href': '../forms/quoterequest3.html'
         }
     ];
 
@@ -1111,7 +1112,8 @@ function generateUtilityBtns() {
         const utilityBtnEl = document.createElement('a');
         const utilityBtnImg = document.createElement('img');
 
-        utilityBtnImg.setAttribute('src', btn.src)
+        utilityBtnEl.setAttribute('href', btn.href);
+        utilityBtnImg.setAttribute('src', btn.src);
 
         utilityBtnEl.appendChild(utilityBtnImg);;
         utilityEl.appendChild(utilityBtnEl);  
