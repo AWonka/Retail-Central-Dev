@@ -191,3 +191,8 @@ select {
     width: 80%;
     margin: 1rem auto;
 }
+
+#html-data-btns button {
+    width: 8%;
+    height: 30px;
+};

@@ -20,7 +20,7 @@ const numberEl = document.querySelector('.progress-number');
 let trackArr = [];
 let valueCount = 0;
 
-function thisATest() {
+function submitForm() {
     let liTest = document.querySelectorAll('.required');
     let liData = document.querySelectorAll('.track');
     const csvBtn = document.createElement('button');
@@ -28,9 +28,15 @@ function thisATest() {
     const headerRow = document.createElement('tr');
     const tableRow = document.createElement('tr');
     document.getElementById('html-data').appendChild(newTable);
-    document.getElementById('html-data').appendChild(csvBtn);
     newTable.appendChild(headerRow);
     newTable.appendChild(tableRow);
+    document.getElementById('html-data-btns').appendChild(csvBtn);
+    csvBtn.innerHTML = 'Export CSV';
+    csvBtn.style.backgroundColor = '#fff';
+    csvBtn.style.borderRadius = '5px';
+    csvBtn.style.transition = '0.2s';
+    csvBtn.onmouseover = () => {csvBtn.style.transform = 'scale(1.2)';};
+    csvBtn.onmouseleave = () => {csvBtn.style.transform = 'scale(1)';};
     for (let i=0; i < liTest.length; i++) { 
         const headers = document.createElement('th');
         
@@ -44,18 +50,10 @@ function thisATest() {
         tableRow.appendChild(tableData);
     }
 
-    csvBtn.addEventListener('click', submitFormData());
+    csvBtn.addEventListener('click', () => {
+        submitFormData();
+    });
 };
-
-function thisATest2(hs) {
-    let liInput = document.querySelectorAll('.track');
-    liInput.forEach((e) => {
-        let ps = document.createElement('p');
-        ps.textContent = e.value;
-        hs.appendChild(ps);
-        console.log(ps)
-    })
-}
 
 progressEl.style.width = 0 + '%';
 numberEl.textContent = 0 + '%';
@@ -651,55 +649,6 @@ function mailerImgCheck(e1, e2, el) {
 function generatePdf() {
     html2pdf().set(opt).from(element).save();
 };
-
-// function exportHTML(){    
-//     let labels = document.querySelectorAll('.tt');
-//     for (let i=0; i < labels.length; i++) {
-//         var inputs = document.querySelectorAll('.track');
-//         let ps = document.createElement('p');
-//         document.getElementById('html-data').appendChild(ps);
-//         ps.textContent = labels[i].textContent;
-//         inputs.forEach((e) => {
-//             let pss = document.createElement('p');
-//             ps.appendChild(pss);
-//             pss.textContent = e.value;
-//         })
-
-//     }
-
-//     Add inputs values to the document before it rendered:
-//     var inputs = document.querySelectorAll('.track');
-//     for (var i=0; i < inputs.length; i++) {
-//         let ps = document.createElement('p');
-//         document.getElementById("html-data").appendChild(ps)
-//         ps.textContent = inputs[i].value;
-//     }
-
-//     // continue with your code
-//    var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
-//         "xmlns:w='urn:schemas-microsoft-com:office:word' "+
-//         "xmlns='http://www.w3.org/TR/REC-html40'>"+
-//         "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
-//    var footer = "</body></html>";
-//    var sourceHTML = header+document.getElementById("html-data").innerHTML+footer;
-   
-//    var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
-//    var fileDownload = document.createElement("a");
-//    document.body.appendChild(fileDownload);
-//    fileDownload.href = source;
-//    fileDownload.download = 'document.doc';
-//    fileDownload.click();
-//    document.body.removeChild(fileDownload);
-// };
-
-// function testLabels() {
-//     let labels = document.querySelectorAll('.tt');
-//     for (let i=0; i < labels.length; i++) {
-//         let ps = document.createElement('p');
-//         document.getElementById('html-data').appendChild(ps);
-//         ps.textContent = labels[i].textContent;
-//     }
-// }
 
 function download_csv(csv, filename) {
     let csvFile
