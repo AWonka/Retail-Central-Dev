@@ -20,6 +20,43 @@ const numberEl = document.querySelector('.progress-number');
 let trackArr = [];
 let valueCount = 0;
 
+function thisATest() {
+    let liTest = document.querySelectorAll('.required');
+    let liData = document.querySelectorAll('.track');
+    const csvBtn = document.createElement('button');
+    const newTable = document.createElement('table');
+    const headerRow = document.createElement('tr');
+    const tableRow = document.createElement('tr');
+    document.getElementById('html-data').appendChild(newTable);
+    document.getElementById('html-data').appendChild(csvBtn);
+    newTable.appendChild(headerRow);
+    newTable.appendChild(tableRow);
+    for (let i=0; i < liTest.length; i++) { 
+        const headers = document.createElement('th');
+        
+        headers.textContent = liTest[i].innerHTML;
+        headerRow.appendChild(headers);
+    }
+    for (let j=0; j < liData.length; j++) {
+        const tableData = document.createElement('td');
+
+        tableData.textContent = liData[j].value;
+        tableRow.appendChild(tableData);
+    }
+
+    csvBtn.addEventListener('click', submitFormData());
+};
+
+function thisATest2(hs) {
+    let liInput = document.querySelectorAll('.track');
+    liInput.forEach((e) => {
+        let ps = document.createElement('p');
+        ps.textContent = e.value;
+        hs.appendChild(ps);
+        console.log(ps)
+    })
+}
+
 progressEl.style.width = 0 + '%';
 numberEl.textContent = 0 + '%';
 
@@ -54,16 +91,19 @@ productCategory.addEventListener('change', () => {
     const value = productCategory.value;
     
     newOrExistingLabel.classList.remove('grayed-out');
+    newOrExistingLabel.classList.add('required');
     newOrExistingEl.classList.remove('grayed-out');
-    newOrExistingEl.classList.add('required', 'track');
+    newOrExistingEl.classList.add('track');
     newOrExistingEl.disabled = false;
     newOrExistingEl.required = true;
     rawOrFinishedLabel.classList.remove('grayed-out');
+    rawOrFinishedLabel.classList.add('required');
     rawOrFinishedEl.classList.remove('grayed-out');
-    rawOrFinishedEl.classList.add('required', 'track');
+    rawOrFinishedEl.classList.add('track');
     rawOrFinishedEl.disabled = false;
     rawOrFinishedEl.required = true;
 
+    
     generateProductForm(value);
 });
 
@@ -610,4 +650,94 @@ function mailerImgCheck(e1, e2, el) {
 
 function generatePdf() {
     html2pdf().set(opt).from(element).save();
+};
+
+// function exportHTML(){    
+//     let labels = document.querySelectorAll('.tt');
+//     for (let i=0; i < labels.length; i++) {
+//         var inputs = document.querySelectorAll('.track');
+//         let ps = document.createElement('p');
+//         document.getElementById('html-data').appendChild(ps);
+//         ps.textContent = labels[i].textContent;
+//         inputs.forEach((e) => {
+//             let pss = document.createElement('p');
+//             ps.appendChild(pss);
+//             pss.textContent = e.value;
+//         })
+
+//     }
+
+//     Add inputs values to the document before it rendered:
+//     var inputs = document.querySelectorAll('.track');
+//     for (var i=0; i < inputs.length; i++) {
+//         let ps = document.createElement('p');
+//         document.getElementById("html-data").appendChild(ps)
+//         ps.textContent = inputs[i].value;
+//     }
+
+//     // continue with your code
+//    var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+//         "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+//         "xmlns='http://www.w3.org/TR/REC-html40'>"+
+//         "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+//    var footer = "</body></html>";
+//    var sourceHTML = header+document.getElementById("html-data").innerHTML+footer;
+   
+//    var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+//    var fileDownload = document.createElement("a");
+//    document.body.appendChild(fileDownload);
+//    fileDownload.href = source;
+//    fileDownload.download = 'document.doc';
+//    fileDownload.click();
+//    document.body.removeChild(fileDownload);
+// };
+
+// function testLabels() {
+//     let labels = document.querySelectorAll('.tt');
+//     for (let i=0; i < labels.length; i++) {
+//         let ps = document.createElement('p');
+//         document.getElementById('html-data').appendChild(ps);
+//         ps.textContent = labels[i].textContent;
+//     }
+// }
+
+function download_csv(csv, filename) {
+    let csvFile
+    let downloadLink
+
+    csvFile = new Blob([csv], {type: 'text/csv'});
+
+    downloadLink = document.createElement('a');
+
+    downloadLink.download = filename
+
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    downloadLink.style.display = 'none';
+
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+};
+
+function export_table_to_csv(html, filename) {
+    let csv = [];
+    let rows = document.querySelectorAll('table tr');
+
+    for(let i=0; i<rows.length; i++) {
+        let row = [], cols = rows[i].querySelectorAll('td, th');
+        
+        for(let j=0; j<cols.length; j++) 
+            row.push(cols[j].textContent);
+
+            csv.push(row.join(','));
+        
+    }
+    download_csv(csv.join('\n'), filename);
+};
+
+function submitFormData() {
+        var html = document.querySelector('table').outerHTML
+
+        export_table_to_csv(html, 'table.csv')
 };

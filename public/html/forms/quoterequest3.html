@@ -28,11 +28,11 @@
                 <div class="section-information project-information">
                     <ul>
                         <li>
-                            <label class="required" for="">Customer Name</label>
-                            <input class=" track" type="text" id="fName" name="fName" autocomplete="off" required>
+                            <label class="required" for="fName">Customer Name</label>
+                            <input class="track" type="text" id="fName" name="fName" autocomplete="off" required>
                         </li>
                         <li>
-                            <label class="required" for="">Product Category</label>
+                            <label class="required" for="pCategory">Product Category</label>
                             <select class="track" name="pCategory" id="pCategory" required>
                                 <option value="" disabled selected>-</option>
                                 <option value="Mailers">MAILERS</option>
@@ -40,7 +40,7 @@
                             </select>
                         </li>
                         <li>
-                            <label class="new-or-existing-label required grayed-out" for="">New or Existing Item?</label>
+                            <label class="new-or-existing-label grayed-out" for="">New or Existing Item?</label>
                             <select class="grayed-out" name="newOrExisting" id="newOrExisting" disabled>
                                 <option value="" disabled selected>-</option>
                                 <option value="New">NEW</option>
@@ -48,15 +48,15 @@
                             </select>
                         </li>
                         <li>
-                            <label class="required" for="">Project Name</label>
-                            <input class="required track" type="text" id="prName" name="prName" autocomplete="off" required>
+                            <label class="required" for="prName">Project Name</label>
+                            <input class="track" type="text" id="prName" name="prName" autocomplete="off" required>
                         </li>
                         <li>
                             <label class="required" for="">Quote Due Date</label>
-                            <input class="required track" type="text" id="qDate" name="qDate" autocomplete="off" required>
+                            <input class="track" type="text" id="qDate" name="qDate" autocomplete="off" required>
                         </li>
                         <li>
-                            <label class="raw-or-finished-label required grayed-out" for="">Is this a Raw or Finished Item?</label>
+                            <label class="raw-or-finished-label grayed-out" for="">Is this a Raw or Finished Item?</label>
                             <select class="grayed-out" name="rawOrFinished" id="rawOrFinished" disabled>
                                 <option value="" disabled selected>-</option>
                                 <option value="Raw">RAW</option>
@@ -65,11 +65,11 @@
                         </li>
                         <li>
                             <label class="required" for="">Teamwork #</label>
-                            <input class="required track" type="text" id="teamworkNumber" name="teamworkNumber" autocomplete="off" required>
+                            <input class="track" type="text" id="teamworkNumber" name="teamworkNumber" autocomplete="off" required>
                         </li>
                         <li>
                             <label class="required" for="">Estimated Launch Date</label>
-                            <input class="required track" type="text" id="estLaunchDate" name="estLaunchDate" autocomplete="off" required>
+                            <input class="track" type="text" id="estLaunchDate" name="estLaunchDate" autocomplete="off" required>
                         </li>
                         <li>
                             <label class="existing-item-number-label grayed-out" for="">List Existing #</label>
@@ -209,7 +209,7 @@
                 </div>
             </div> -->
             <div class="submit-div">
-                <button type="submit" class="submit-btn" onclick="generatePdf()" value="GeneratePdf">Submit</button>
+                <button type="submit" class="submit-btn" onclick="thisATest()" value="generatePdf">Submit</button>
             </div>
 
             <!-- <div class="image-form">
@@ -232,6 +232,8 @@
                 </div>
             </div> -->
         </form>
+
+        <div id="html-data"></div>
     </div>
 </body>
 </html>
