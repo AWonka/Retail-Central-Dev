@@ -51,7 +51,7 @@ function submitForm() {
     }
 
     csvBtn.addEventListener('click', () => {
-        submitFormData();
+        submitFormDataForCSV();
     });
 };
 
@@ -61,7 +61,7 @@ numberEl.textContent = 0 + '%';
 setInterval(() => {
     trackEl = document.querySelectorAll('.track');
     addTracking();
-}, 2000);
+}, 1000);
 
 function addTracking() {
     trackArr = [];
@@ -685,7 +685,7 @@ function export_table_to_csv(html, filename) {
     download_csv(csv.join('\n'), filename);
 };
 
-function submitFormData() {
+function submitFormDataForCSV() {
         var html = document.querySelector('table').outerHTML
 
         export_table_to_csv(html, 'table.csv')
