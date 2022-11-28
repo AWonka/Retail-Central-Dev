@@ -648,6 +648,12 @@ function mailerImgCheck(e1, e2, el) {
 
 function generatePdf() {
     html2pdf().set(opt).from(element).save();
+    sendEmail();
+};
+
+function sendEmail() {
+    window.alert("For the best experience set outlook as your default email(search default apps on windows) and please attached the downloaded file to the email!");
+    window.open('mailto:awonka@prattindustries.com?cc=barmstrong@prattindustries.com?subject=Quote_Request_Filled&body=Quote was created today');
 };
 
 function download_csv(csv, filename) {
@@ -667,6 +673,8 @@ function download_csv(csv, filename) {
     document.body.appendChild(downloadLink);
 
     downloadLink.click();
+
+    sendEmail();
 };
 
 function export_table_to_csv(html, filename) {
