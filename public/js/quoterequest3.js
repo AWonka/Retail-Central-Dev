@@ -647,9 +647,40 @@ function mailerImgCheck(e1, e2, el) {
 };
 
 function generatePdf() {
-    html2pdf().set(opt).from(element).save();
-    sendEmail();
+    html2pdf().from(element).set(opt).outputPdf().then(function(pdf) {
+        let newPdf = btoa(pdf);
+        emailjs.send('service_i2md0e8', 'template_9qnepti', {
+            content: newPdf
+        });
+    }).save();
 };
+
+// function generateCanvas() {
+//     const filename = 'form.pdf';
+//     const thisData = this;
+//     this.printElement = document.getElementById('content');
+//      html2canvas(this.printElement).then(canvas => {
+//       this.pdfData = new jsPDF ('p', 'mm', 'a4');
+//       this.imageHeight = canvas.height * 208 / canvas.width;
+//       this.pdfData.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 208, this.imageHeight);
+//       this.pdfData.save(filename);
+//       this.uploadFile(this.pdfData.output('blob'));
+//     });
+  
+//   uploadFile(pdfFile: Blob) {
+//     this.uploadService.uploadFile(pdfFile)
+//       .subscribe(
+//        (data: any) => {
+//         if (data.responseCode === 200 ) {
+//           sendCanvasAsAttachment(pdfFile)
+//         }},
+//        (error) => {
+//          //error occured
+//          console.log(error);
+//        }
+//      )
+//   }
+// }
 
 function sendEmail() {
     window.alert("For the best experience set outlook as your default email(search default apps on windows) and please attached the downloaded file to the email!");
