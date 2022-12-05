@@ -76,21 +76,21 @@ if (document.title === "Home Depot") {
             'email': 'rphilabaum@prattindustries.com',
             'title': 'National Account Manager',
             'lead': true,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/accounts/home depot/Rick Philabaum-Fix.png',
         },
         {
             'name': 'Brendan Rogers',
             'email': 'brogers@prattindustries.com',
             'title': 'Project Manager/Dotcom Lead',
             'lead': false,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/accounts/home depot/Brendan rogers-Fix.png',
         },
         {
             'name': 'Zach Nash',
             'email': 'znash@prattindustries.com',
             'title': 'Account Manager',
             'lead': false,
-            'img': '../../assets/images/Profile-place-holder-8.png',
+            'img': '../../assets/images/accounts/home depot/Zach Nash-Fix.png',
         }
     ];
 };

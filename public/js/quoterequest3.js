@@ -1,4 +1,6 @@
+// general document elements/settings
 const formEl = document.querySelector('form');
+const dateEl = document.querySelector('.date-time');
 const productForm = document.querySelector('.product-form');
 const imageForm = document.querySelector('.image-form');
 const element = document.getElementById('element-to-print');
@@ -7,6 +9,7 @@ const opt = {
     jsPDF: { format: 'a3'}
 };
 
+// drop down selections first section
 const productCategory = document.getElementById('pCategory');
 const newOrExistingLabel = document.querySelector('.new-or-existing-label');
 const newOrExistingEl = document.getElementById('newOrExisting');
@@ -15,10 +18,22 @@ const rawOrFinishedEl = document.getElementById('rawOrFinished');
 const existingItemNumberLabel = document.querySelector('.existing-item-number-label');
 const existingItemNumberEl = document.getElementById('existingItemNumber');
 
+// progress bar / tracking
 const progressEl = document.querySelector('.progress-tracker');
 const numberEl = document.querySelector('.progress-number');
 let trackArr = [];
 let valueCount = 0;
+progressEl.style.width = 0 + '%';
+numberEl.textContent = 0 + '%';
+
+// Date times
+const getDate = () => {
+    let today = new Date();
+    let date = today.toLocaleDateString();
+    let time = today.toLocaleTimeString();
+    return date+' '+time;
+}
+dateEl.innerText = getDate();
 
 function submitForm() {
     let liTest = document.querySelectorAll('.required');
@@ -54,9 +69,6 @@ function submitForm() {
         submitFormDataForCSV();
     });
 };
-
-progressEl.style.width = 0 + '%';
-numberEl.textContent = 0 + '%';
 
 setInterval(() => {
     trackEl = document.querySelectorAll('.track');
@@ -652,35 +664,11 @@ function generatePdf() {
         emailjs.send('service_i2md0e8', 'template_9qnepti', {
             content: newPdf
         });
+    },function(error) {
+        error(error);
+        console.log('FAILED...', error);
     }).save();
 };
-
-// function generateCanvas() {
-//     const filename = 'form.pdf';
-//     const thisData = this;
-//     this.printElement = document.getElementById('content');
-//      html2canvas(this.printElement).then(canvas => {
-//       this.pdfData = new jsPDF ('p', 'mm', 'a4');
-//       this.imageHeight = canvas.height * 208 / canvas.width;
-//       this.pdfData.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 208, this.imageHeight);
-//       this.pdfData.save(filename);
-//       this.uploadFile(this.pdfData.output('blob'));
-//     });
-  
-//   uploadFile(pdfFile: Blob) {
-//     this.uploadService.uploadFile(pdfFile)
-//       .subscribe(
-//        (data: any) => {
-//         if (data.responseCode === 200 ) {
-//           sendCanvasAsAttachment(pdfFile)
-//         }},
-//        (error) => {
-//          //error occured
-//          console.log(error);
-//        }
-//      )
-//   }
-// }
 
 function sendEmail() {
     window.alert("For the best experience set outlook as your default email(search default apps on windows) and please attached the downloaded file to the email!");
