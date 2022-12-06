@@ -40,11 +40,25 @@ ul {
     padding: 0;
 }
 
-li {
+/* use these next 2 when some li's in the ul are radios */
+.li-radio {
+    display: flex;
+}
+
+.li-radio label {
+    margin-right: 1.5rem;
+}
+
+.li-non-radio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* li {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 1.5rem;
-}
+} */
 
 label {
     font-weight: bold;
@@ -142,6 +156,12 @@ select {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.project-information li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1.5rem;
+}
+
 .product-information-mailers {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -156,11 +176,31 @@ select {
 .product-information-mailers ul li {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 1.5rem;
+}
+
+.packaging-finished-mailers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 10rem;
+}
+
+.packaging-finished-mailers ul {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.packaging-finished-mailers li {
+    margin-bottom: 1rem;
 }
 
 .shipping-info ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.shipping-info li {
+    margin-bottom: 1.5rem;
 }
 
 .shipping-info ul li:last-child {

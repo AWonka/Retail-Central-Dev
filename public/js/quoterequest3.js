@@ -10,6 +10,7 @@ const opt = {
 };
 
 // drop down selections first section
+const fNameEl = document.getElementById('fName');
 const productCategory = document.getElementById('pCategory');
 const newOrExistingLabel = document.querySelector('.new-or-existing-label');
 const newOrExistingEl = document.getElementById('newOrExisting');
@@ -25,6 +26,24 @@ let trackArr = [];
 let valueCount = 0;
 progressEl.style.width = 0 + '%';
 numberEl.textContent = 0 + '%';
+function addTracking() {
+    trackArr = [];
+    trackEl.forEach((e) => {
+        trackArr.push(e);
+        if (e.value.length > 0) {
+            e.classList.add('done');
+        }
+        if (e.value.length === 0) {
+            e.classList.remove('done');
+        }
+        updateProgress(e);
+    })
+    console.log(trackArr.length);
+};
+setInterval(() => {
+    trackEl = document.querySelectorAll('.track');
+    addTracking();
+}, 1000);
 
 // Date times
 const getDate = () => {
@@ -35,6 +54,7 @@ const getDate = () => {
 }
 dateEl.innerText = getDate();
 
+// rest of code
 function submitForm() {
     let liTest = document.querySelectorAll('.required');
     let liData = document.querySelectorAll('.track');
@@ -69,26 +89,6 @@ function submitForm() {
         submitFormDataForCSV();
     });
 };
-
-setInterval(() => {
-    trackEl = document.querySelectorAll('.track');
-    addTracking();
-}, 1000);
-
-function addTracking() {
-    trackArr = [];
-    trackEl.forEach((e) => {
-        trackArr.push(e);
-        if (e.value.length > 0) {
-            e.classList.add('done');
-        }
-        if (e.value.length === 0) {
-            e.classList.remove('done');
-        }
-        updateProgress(e);
-    })
-    console.log(trackArr.length);
-}
 
 function updateProgress(e) {
     let done = document.querySelectorAll('.done');
@@ -228,6 +228,8 @@ function generateProductForm(e) {
                     </ul>
                 </div> 
             </div>
+            
+            <div class="for-finished-mailer"></div>
 
             <div class="section html2pdf__page-break">
                 <div class="section-header">
@@ -437,6 +439,7 @@ function generateShippingScripts() {
 }
 
 function generateMailerScripts() {
+        const forFinishedMailerEl = document.querySelector('.for-finished-mailer');
         const productSizeMailerEl = document.getElementById('productSizeMailer');
         const productSizeMailerOtherLabel = document.querySelector('.product-size-mailer-other-label');
         const productSizeMailerOtherEl = document.getElementById('productSizeMailerOther');
@@ -475,6 +478,80 @@ function generateMailerScripts() {
                 packNeedLabelMailerEl.classList.add('track');
                 packNeedLabelMailerEl.disabled = false;
                 packNeedLabelMailerEl.required = true;
+                forFinishedMailerEl.innerHTML = `
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Packaging: Finished Item</h2>
+                    </div>
+                    <div class="section-information packaging-finished-mailers">
+                        <ul>
+                            <li class="li-non-radio">
+                                <label class="required" for="">Case/Packout Type:</label>
+                                <select class="track" name="" id="casePackoutTypeMailer" required>
+                                    <option value="" disabled selected>-</option>
+                                    <option value="RSC/OPK">RSC/OPK</option>
+                                    <option value="SRP">SRP</option>
+                                    <option value="Tray & HSC">Tray & HSC</option>
+                                    <option value="Display">Display</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </li>
+                            <li class="li-non-radio">
+                                <label class="grayed-out casePackoutTypeMailerOtherLabel" for=""></label>
+                                <input class="grayed-out" type="text" id="casePackoutTypeMailerOther" placeholder="Other Packout type" autocomplete="off" disabled>
+                            </li>
+                            <li class="li-non-radio">
+                                <label class="required" for=""># of pcs per packout type</label>
+                                <input class="track" type="text" id="pcsPerPackoutTypeMailer" placeholder="" autocomplete="off" required>
+                            </li>
+                            <li class="li-non-radio">
+                                <label class="required" for=""># of packs per case</label>
+                                <input class="track" type="text" id="packsPerCaseMailer" placeholder="" autocomplete="off" required>
+                            </li>
+                            <li class="li-non-radio">
+                                <label class="required" for="">Is RSC/OPK labeled or printed?</label>
+                                <select class="track" name="" id="rscLabeledOrPrintedMailer" required>
+                                    <option value="" disabled selected>-</option>
+                                    <option value="Labeled">Labeled</option>
+                                    <option value="Printed">Printed</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="li-radio">
+                                <label class="required" for="">Upload image or Teamwork link?</label>
+                                <input class="track" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
+                                <label for="image">Upload Img</label>
+                                <input class="track" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
+                                <label for="teamwork">Teamwork Link</label>
+                            </li>
+                            <li class="li-non-radio">
+                                <label class="casePackoutSpecMailerBtnLabel grayed-out" for="">Upload case/packout spec here:</label>
+                                <input class="grayed-out" type="file" id="casePackoutSpecMailerBtn" name="casePackoutSpecMailerBtn" disabled>
+                            </li>
+                            <li class="li-non-radio">
+                                <label class="casePackoutSpecMailerTeamworkLabel" for=""></label>
+                                <input class="grayed-out" type="text" id="casePackoutSpecMailerTeamwork" placeholder="Teamwork Link" autocomplete="off" disabled>
+                            </li>
+                            <li class="li-radio">
+                                <label class="required" for="">Upload image or Teamwork link?</label>
+                                <input class="track" type="radio" id="" name="imageOrTeamworkArtMailer" value="" required>
+                                <label for="image">Upload Img</label>
+                                <input class="track" type="radio" id="" name="imageOrTeamworkArtMailer" value="" required>
+                                <label for="teamwork">Teamwork Link</label>
+                            </li>
+                            <li class="li-non-radio">
+                                <label class="casePackoutArtMailerBtnLabel grayed-out" for="">Upload case/packout Art here:</label>
+                                <input class="grayed-out" type="file" id="casePackoutArtMailerBtn" name="casePackoutArtMailerBtn" disabled>
+                            </li>
+                            <li class="li-non-radio">
+                                <label class="casePackoutArtMailerTeamworkLabel" for=""></label>
+                                <input class="grayed-out" type="text" id="casePackoutArtMailerTeamwork" placeholder="Teamwork Link" autocomplete="off" disabled>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                `
             }
             else {
                 finishedProductMailerLabel.classList.add('grayed-out');
@@ -504,6 +581,7 @@ function generateMailerScripts() {
                 packNeedsLabelBtn.classList.remove('track');
                 packNeedsLabelBtn.disabled = true;
                 packNeedsLabelBtn.required = false;
+                forFinishedMailerEl.innerHTML = ``;
             }
         });
 
@@ -659,9 +737,11 @@ function mailerImgCheck(e1, e2, el) {
 };
 
 function generatePdf() {
+    let fName = fNameEl.value;
     html2pdf().from(element).set(opt).outputPdf().then(function(pdf) {
         let newPdf = btoa(pdf);
         emailjs.send('service_i2md0e8', 'template_9qnepti', {
+            from_name: fName,
             content: newPdf
         });
     },function(error) {
