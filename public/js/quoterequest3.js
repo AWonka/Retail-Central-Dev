@@ -1,7 +1,7 @@
 // general document elements/settings
 const formEl = document.querySelector('form');
 const dateEl = document.querySelector('.date-time');
-const productForm = document.querySelector('.product-form');
+const productFormEl = document.querySelector('.product-form');
 const imageForm = document.querySelector('.image-form');
 const element = document.getElementById('element-to-print');
 const opt = {
@@ -140,12 +140,11 @@ newOrExistingEl.addEventListener('change', () => {
 });
 
 function generateProductForm(e) {
+    productFormEl.innerHTML = ``;
     // Mailer
     if (e === 'Mailers') {
-        const generateDiv = document.createElement('div');
 
-        generateDiv.innerHTML = ``;
-        generateDiv.innerHTML = `
+        productFormEl.innerHTML = `
         <div class="section">
                 <div class="section-header">
                     <h2>Product Information: <span class="product-type">MAILERS</span></h2>
@@ -299,7 +298,6 @@ function generateProductForm(e) {
                 </div>
             </div>
         `
-        productForm.append(generateDiv);
         generateMailerScripts();
         generateShippingScripts();
     }
@@ -520,9 +518,9 @@ function generateMailerScripts() {
                         <ul>
                             <li class="li-radio">
                                 <label class="required" for="">Upload image or Teamwork link?</label>
-                                <input class="track" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
+                                <input class="track imageOrTeamworkSpecMailer" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
                                 <label for="image">Upload Img</label>
-                                <input class="track" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
+                                <input class="track imageOrTeamworkSpecMailer" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
                                 <label for="teamwork">Teamwork Link</label>
                             </li>
                             <li class="li-non-radio">
@@ -552,6 +550,104 @@ function generateMailerScripts() {
                     </div>
                 </div>
                 `
+                const casePackoutTypeMailerEl = document.getElementById('casePackoutTypeMailer');
+                const casePackoutTypeMailerOtherLabelEl = document.querySelector('.casePackoutTypeMailerOtherLabel');
+                const casePackoutTypeMailerOtherEl = document.getElementById('casePackoutTypeMailerOther');
+                const rscLabeledOrPrintedMailerEl = document.getElementById('rscLabeledOrPrintedMailer');
+                const imageOrTeamworkSpecMailerEl = document.querySelectorAll('.imageOrTeamworkSpecMailer');
+                const casePackoutSpecMailerBtnLabel = document.querySelector('.casePackoutSpecMailerBtnLabel');
+                const casePackoutSpecMailerBtn = document.getElementById('casePackoutSpecMailerBtn');
+                const casePackoutSpecMailerTeamworkLabel = document.querySelector('.casePackoutSpecMailerTeamworkLabel');
+                const casePackoutSpecMailerTeamworkEl = document.getElementById('casePackoutSpecMailerTeamwork');
+                const imageOrTeamworkArtMailer = document.getElementsByName('imageOrTeamworkArtMailer');
+                const casePackoutArtMailerBtn = document.getElementById('casePackoutArtMailerBtn');
+                let arr = [];
+
+                casePackoutTypeMailerEl.addEventListener('click', () => {
+                    if (casePackoutTypeMailerEl.value === 'Other') {
+                        casePackoutTypeMailerOtherLabelEl.classList.remove('grayed-out');
+                        casePackoutTypeMailerOtherLabelEl.classList.add('required');
+                        casePackoutTypeMailerOtherEl.classList.remove('grayed-out');
+                        casePackoutTypeMailerOtherEl.classList.add('track');
+                        casePackoutTypeMailerOtherEl.disabled = false;
+                        casePackoutTypeMailerOtherEl.required = true;
+                    }
+                    else {
+                        casePackoutTypeMailerOtherLabelEl.classList.add('grayed-out');
+                        casePackoutTypeMailerOtherLabelEl.classList.remove('required');
+                        casePackoutTypeMailerOtherEl.classList.add('grayed-out');
+                        casePackoutTypeMailerOtherEl.classList.remove('track', 'done');
+                        casePackoutTypeMailerOtherEl.disabled = true;
+                        casePackoutTypeMailerOtherEl.required = false;
+                        casePackoutTypeMailerOtherEl.value = '';
+                    }
+                });
+
+                for (i=0; i < imageOrTeamworkSpecMailerEl.length; i++) {
+                    arr.push(imageOrTeamworkSpecMailerEl[i]);
+                };
+                
+                arr.forEach((e) => {
+                    e.addEventListener('click', (j) => {
+                        if(j.target == arr[0]) {
+                            casePackoutSpecMailerBtnLabel.classList.remove('grayed-out');
+                            casePackoutSpecMailerBtnLabel.classList.add('required');
+                            casePackoutSpecMailerBtn.classList.remove('grayed-out');
+                            casePackoutSpecMailerBtn.classList.add('track');
+                            casePackoutSpecMailerBtn.disabled = false;
+                            casePackoutSpecMailerBtn.required = true;
+                            casePackoutSpecMailerTeamworkLabel.classList.add('grayed-out');
+                            casePackoutSpecMailerTeamworkLabel.classList.remove('required');
+                            casePackoutSpecMailerTeamworkEl.classList.add('grayed-out');
+                            casePackoutSpecMailerTeamworkEl.classList.remove('track', 'done');
+                            casePackoutSpecMailerTeamworkEl.disabled = true;
+                            casePackoutSpecMailerTeamworkEl.required = false;
+                            casePackoutSpecMailerTeamworkEl.value = '';
+                        }
+                        else {
+                            casePackoutSpecMailerTeamworkLabel.classList.remove('grayed-out');
+                            casePackoutSpecMailerTeamworkLabel.classList.add('required');
+                            casePackoutSpecMailerTeamworkEl.classList.remove('grayed-out');
+                            casePackoutSpecMailerTeamworkEl.classList.add('track');
+                            casePackoutSpecMailerTeamworkEl.disabled = false;
+                            casePackoutSpecMailerTeamworkEl.required = true;
+                            casePackoutSpecMailerBtnLabel.classList.add('grayed-out');
+                            casePackoutSpecMailerBtnLabel.classList.remove('required');
+                            casePackoutSpecMailerBtn.classList.add('grayed-out');
+                            casePackoutSpecMailerBtn.classList.remove('track', 'done');
+                            casePackoutSpecMailerBtn.disabled = true;
+                            casePackoutSpecMailerBtn.required = false;
+                            casePackoutSpecMailerBtn.value = '';
+                        }
+                    });
+                })
+
+                console.log(arr);
+
+                // for(radio in imageOrTeamworkSpecMailerClass) {
+                //     let arr = [];
+                //     arr.push(imageOrTeamworkSpecMailerClass[radio]);
+                //     console.log(arr[0]);
+                //     arr.onclick = function(e) {
+                //         console.log(e[0])
+                //         if (!e[0]) {
+                //             casePackoutSpecMailerBtnLabel.classList.add('grayed-out');
+                //             casePackoutSpecMailerBtnLabel.classList.remove('required');
+                //             casePackoutSpecMailerBtn.classList.add('grayed-out');
+                //             casePackoutSpecMailerBtn.classList.remove('track');
+                //             casePackoutSpecMailerBtn.disabled = true;
+                //             casePackoutSpecMailerBtn.required = false;
+                //         }
+                //         else {
+                //             casePackoutSpecMailerBtnLabel.classList.remove('grayed-out');
+                //             casePackoutSpecMailerBtnLabel.classList.add('required');
+                //             casePackoutSpecMailerBtn.classList.remove('grayed-out');
+                //             casePackoutSpecMailerBtn.classList.add('track');
+                //             casePackoutSpecMailerBtn.disabled = false;
+                //             casePackoutSpecMailerBtn.required = true;
+                //         }
+                //     }
+                // };
             }
             else {
                 finishedProductMailerLabel.classList.add('grayed-out');
