@@ -518,9 +518,9 @@ function generateMailerScripts() {
                         <ul>
                             <li class="li-radio">
                                 <label class="required" for="">Upload image or Teamwork link?</label>
-                                <input class="track imageOrTeamworkSpecMailer" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
+                                <input class="track" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
                                 <label for="image">Upload Img</label>
-                                <input class="track imageOrTeamworkSpecMailer" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
+                                <input class="track" type="radio" id="" name="imageOrTeamworkSpecMailer" value="" required>
                                 <label for="teamwork">Teamwork Link</label>
                             </li>
                             <li class="li-non-radio">
@@ -554,14 +554,26 @@ function generateMailerScripts() {
                 const casePackoutTypeMailerOtherLabelEl = document.querySelector('.casePackoutTypeMailerOtherLabel');
                 const casePackoutTypeMailerOtherEl = document.getElementById('casePackoutTypeMailerOther');
                 const rscLabeledOrPrintedMailerEl = document.getElementById('rscLabeledOrPrintedMailer');
-                const imageOrTeamworkSpecMailerEl = document.querySelectorAll('.imageOrTeamworkSpecMailer');
+                const imageOrTeamworkSpecMailerEl = document.getElementsByName('imageOrTeamworkSpecMailer');
                 const casePackoutSpecMailerBtnLabel = document.querySelector('.casePackoutSpecMailerBtnLabel');
                 const casePackoutSpecMailerBtn = document.getElementById('casePackoutSpecMailerBtn');
                 const casePackoutSpecMailerTeamworkLabel = document.querySelector('.casePackoutSpecMailerTeamworkLabel');
                 const casePackoutSpecMailerTeamworkEl = document.getElementById('casePackoutSpecMailerTeamwork');
-                const imageOrTeamworkArtMailer = document.getElementsByName('imageOrTeamworkArtMailer');
+                const imageOrTeamworkArtMailerEl = document.getElementsByName('imageOrTeamworkArtMailer');
+                const casePackoutArtMailerBtnLabel = document.querySelector('.casePackoutArtMailerBtnLabel');
                 const casePackoutArtMailerBtn = document.getElementById('casePackoutArtMailerBtn');
-                let arr = [];
+                const casePackoutArtMailerTeamworkLabel = document.querySelector('.casePackoutArtMailerTeamworkLabel');
+                const casePackoutArtMailerTeamworkEl = document.getElementById('casePackoutArtMailerTeamwork');
+                let arrOne = [];
+                let arrTwo = [];
+
+                for (i=0; i < imageOrTeamworkSpecMailerEl.length; i++) {
+                    arrOne.push(imageOrTeamworkSpecMailerEl[i]);
+                };
+
+                for (i=0; i < imageOrTeamworkArtMailerEl.length; i++) {
+                    arrTwo.push(imageOrTeamworkArtMailerEl[i]);
+                };
 
                 casePackoutTypeMailerEl.addEventListener('click', () => {
                     if (casePackoutTypeMailerEl.value === 'Other') {
@@ -582,14 +594,10 @@ function generateMailerScripts() {
                         casePackoutTypeMailerOtherEl.value = '';
                     }
                 });
-
-                for (i=0; i < imageOrTeamworkSpecMailerEl.length; i++) {
-                    arr.push(imageOrTeamworkSpecMailerEl[i]);
-                };
                 
-                arr.forEach((e) => {
+                arrOne.forEach((e) => {
                     e.addEventListener('click', (j) => {
-                        if(j.target == arr[0]) {
+                        if(j.target === arrOne[0]) {
                             casePackoutSpecMailerBtnLabel.classList.remove('grayed-out');
                             casePackoutSpecMailerBtnLabel.classList.add('required');
                             casePackoutSpecMailerBtn.classList.remove('grayed-out');
@@ -620,34 +628,43 @@ function generateMailerScripts() {
                             casePackoutSpecMailerBtn.value = '';
                         }
                     });
-                })
+                });
 
-                console.log(arr);
+                arrTwo.forEach((e) => {
+                    e.addEventListener('click', (j) => {
+                        if(j.target === arrTwo[0]) {
+                            casePackoutArtMailerBtnLabel.classList.remove('grayed-out');
+                            casePackoutArtMailerBtnLabel.classList.add('required');
+                            casePackoutArtMailerBtn.classList.remove('grayed-out');
+                            casePackoutArtMailerBtn.classList.add('track');
+                            casePackoutArtMailerBtn.disabled = false;
+                            casePackoutArtMailerBtn.required = true;
+                            casePackoutArtMailerTeamworkLabel.classList.add('grayed-out');
+                            casePackoutArtMailerTeamworkLabel.classList.remove('required');
+                            casePackoutArtMailerTeamworkEl.classList.add('grayed-out');
+                            casePackoutArtMailerTeamworkEl.classList.remove('track', 'done');
+                            casePackoutArtMailerTeamworkEl.disabled = true;
+                            casePackoutArtMailerTeamworkEl.required = false;
+                            casePackoutArtMailerTeamworkEl.value = '';
+                        }
+                        else {
+                            casePackoutArtMailerTeamworkLabel.classList.remove('grayed-out');
+                            casePackoutArtMailerTeamworkLabel.classList.add('required');
+                            casePackoutArtMailerTeamworkEl.classList.remove('grayed-out');
+                            casePackoutArtMailerTeamworkEl.classList.add('track');
+                            casePackoutArtMailerTeamworkEl.disabled = false;
+                            casePackoutArtMailerTeamworkEl.value = '';
+                            casePackoutArtMailerBtnLabel.classList.add('grayed-out');
+                            casePackoutArtMailerBtnLabel.classList.remove('required');
+                            casePackoutArtMailerBtn.classList.add('grayed-out');
+                            casePackoutArtMailerBtn.classList.remove('track', 'done');
+                            casePackoutArtMailerBtn.disabled = true;
+                            casePackoutArtMailerBtn.required = false;
+                            casePackoutArtMailerBtn.value = '';
+                        }
+                    });
+                });
 
-                // for(radio in imageOrTeamworkSpecMailerClass) {
-                //     let arr = [];
-                //     arr.push(imageOrTeamworkSpecMailerClass[radio]);
-                //     console.log(arr[0]);
-                //     arr.onclick = function(e) {
-                //         console.log(e[0])
-                //         if (!e[0]) {
-                //             casePackoutSpecMailerBtnLabel.classList.add('grayed-out');
-                //             casePackoutSpecMailerBtnLabel.classList.remove('required');
-                //             casePackoutSpecMailerBtn.classList.add('grayed-out');
-                //             casePackoutSpecMailerBtn.classList.remove('track');
-                //             casePackoutSpecMailerBtn.disabled = true;
-                //             casePackoutSpecMailerBtn.required = false;
-                //         }
-                //         else {
-                //             casePackoutSpecMailerBtnLabel.classList.remove('grayed-out');
-                //             casePackoutSpecMailerBtnLabel.classList.add('required');
-                //             casePackoutSpecMailerBtn.classList.remove('grayed-out');
-                //             casePackoutSpecMailerBtn.classList.add('track');
-                //             casePackoutSpecMailerBtn.disabled = false;
-                //             casePackoutSpecMailerBtn.required = true;
-                //         }
-                //     }
-                // };
             }
             else {
                 finishedProductMailerLabel.classList.add('grayed-out');
