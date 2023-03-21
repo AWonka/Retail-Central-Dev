@@ -236,7 +236,7 @@ function generateProductForm(e) {
                 </div>
                 <div class="section-information shipping-info">
                     <ul>
-                        <li>
+                        <li class="li-non-radio">
                             <label class="required" for="">Shipping Type</label>
                             <select class="track" name="shipToType" id="shipToType" required>
                                 <option value="" disabled selected>-</option>
@@ -246,27 +246,7 @@ function generateProductForm(e) {
                                 <option value="Customer Pickup">Customer Pickup</option>
                             </select>
                         </li>
-                        <li>
-                            <label class="ship-to-dc-label" for="" hidden=true>Select DC</label>
-                            <select class="" name="shipToDc" id="shipToDc" hidden=true disabled>
-                                <option value="" disabled selected>-</option>
-                                <option value="47 Conyers">47 Conyers</option>
-                                <option value="TX Dallas">TX Dallas</option>
-                                <option value="RC Ontario">RC Ontario</option>
-                                <option value="UC Stockton">UC Stockton</option>
-                                <option value="C8 Lathrop">C8 Lathrop</option>
-                                <option value="KW Kent">KW Kent</option>
-                                <option value="R3 Dayton NJ">R3 Dayton NJ</option>
-                                <option value="DO Dayton OH">DO Dayton OH</option>
-                                <option value="VO Vandalia">VO Vandalia</option>
-                                <option value="WO Wapakoneta">WO Wapakoneta</option>
-                                <option value="GT Garland">GT Garland</option>
-                                <option value="AP Allentown">AP Allentown</option>
-                                <option value="CP Carlisle">CP Carlisle</option>
-                                <option value="NG Newnan">NG Newnan</option>
-                            </select>
-                        </li>
-                        <li>
+                        <li class="li-non-radio">
                             <label class="ship-to-address-label" for="" hidden=true></label>
                             <input class="" type="text" id="shipToAddress" name="shipToAddress" autocomplete="off" placeholder="Enter Address" hidden=true>
                             <label class="ship-to-dropship-label required" for="" hidden=true></label>
@@ -276,6 +256,67 @@ function generateProductForm(e) {
                         </li>
                     </ul>
                 </div>
+                <div class="ship-to-dc-div" hidden="true">
+                            <h2>Select DC:</h2>
+                            <ul>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">47 Conyers</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">TX Dallas</label> 
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">RC Ontario</label>  
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">UC Stockton</label> 
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">C8 Lathrop</label>  
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">KW Kent</label>   
+                                    </li>
+                                     <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">R3 Dayton NJ</label> 
+                                     </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">DO Dayton OH</label> 
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">VO Vandalia</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">WO Wapakoneta</label>
+                                    </li>   
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">GT Garland</label> 
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">AP Allentown</label>   
+                                    </li>
+                                     <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">CP Carlisle</label> 
+                                     </li>
+                                    <li>
+                                        <input type="checkbox" id="" name="shipToDc">
+                                        <label for="">NG Newnan</label> 
+                                    </li>
+                            </ul>
+                        </div>
             </div>
 
             <div class="image-form">
@@ -304,9 +345,10 @@ function generateProductForm(e) {
 };
 
 function generateShippingScripts() {
+    const shipToDcEl = document.querySelector('.ship-to-dc-div');
     const shipToTypeEl = document.getElementById('shipToType');
     const shipToDcLabel = document.querySelector('.ship-to-dc-label');
-    const shipToDcEl = document.getElementById('shipToDc');
+    // const shipToDcEl = document.getElementById('shipToDc');
     const shipToAddressLabel = document.querySelector('.ship-to-address-label');
     const shipToAddressEl = document.getElementById('shipToAddress');
     const shipToDropshipLabel = document.querySelector('.ship-to-dropship-label');
@@ -318,12 +360,7 @@ function generateShippingScripts() {
         const value = shipToTypeEl.value;
 
         if (value === 'DC') {
-            shipToDcLabel.hidden = false;
-            shipToDcLabel.classList.add('required');
             shipToDcEl.hidden = false;
-            shipToDcEl.disabled = false;
-            shipToDcEl.required = true;
-            shipToDcEl.classList.add('track');
             shipToAddressLabel.classList.remove('required');
             shipToAddressLabel.hidden = true;
             shipToAddressEl.classList.remove('track');
@@ -347,13 +384,7 @@ function generateShippingScripts() {
             shipToPickupEl.required = false;
         }
         else if (value === 'Other Address') {
-            shipToDcLabel.hidden = true;
-            shipToDcLabel.classList.remove('required');
-            shipToDcEl.value = '';
             shipToDcEl.hidden = true;
-            shipToDcEl.disabled = true;
-            shipToDcEl.required = false;
-            shipToDcEl.classList.remove('track');
             shipToAddressLabel.classList.add('required');
             shipToAddressLabel.hidden = false;
             shipToAddressEl.classList.add('track');
@@ -376,13 +407,7 @@ function generateShippingScripts() {
             shipToPickupEl.required = false;
         }
         else if (value === 'Dropship') {
-            shipToDcLabel.hidden = true;
-            shipToDcLabel.classList.remove('required');
-            shipToDcEl.value = '';
             shipToDcEl.hidden = true;
-            shipToDcEl.disabled = true;
-            shipToDcEl.required = false;
-            shipToDcEl.classList.remove('track');
             shipToAddressLabel.classList.remove('required');
             shipToAddressLabel.hidden = true;
             shipToAddressEl.classList.remove('track');
@@ -405,13 +430,7 @@ function generateShippingScripts() {
             shipToPickupEl.required = false;
         }
         else {
-            shipToDcLabel.hidden = true;
-            shipToDcLabel.classList.remove('required');
-            shipToDcEl.value = '';
             shipToDcEl.hidden = true;
-            shipToDcEl.disabled = true;
-            shipToDcEl.required = false;
-            shipToDcEl.classList.remove('track');
             shipToAddressLabel.classList.remove('required');
             shipToAddressLabel.hidden = true;
             shipToAddressEl.classList.remove('track');

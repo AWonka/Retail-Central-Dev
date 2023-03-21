@@ -208,6 +208,31 @@ select {
     justify-content: center;
 }
 
+.ship-to-dc-div h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ship-to-dc-div ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: auto;
+}
+
+.ship-to-dc-div li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.ship-to-dc-div input {
+    width: 20px;
+    margin: auto;
+}
 /* .image-section {
     display: none;
 } */
