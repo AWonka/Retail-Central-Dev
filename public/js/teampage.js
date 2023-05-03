@@ -16,7 +16,8 @@ if (document.title === "Accounting & Finance") {
     var utilityData = [
         {
             'src': '../../assets/images/Certify button-8.png',
-            'alt': 'Certify Button'
+            'alt': 'Certify Button',
+            'href': 'https://www.certify.com',
         }
     ];
 
@@ -287,7 +288,8 @@ if (document.title === "Data & Analytics") {
     var utilityData = [
         {
             'src': '../../assets/images/Teamwork-button-8.png',
-            'alt': 'Teamwork Button'
+            'alt': 'Teamwork Button',
+            'href': 'https://www.teamwork.com/try-now/project-management-software-demo/?ref=a_Search-Brand-Tier1-US%2FCA&adgroup=Brand%20-%20Exact%20Match&source_category=PPC&source_detail=Adwords&utm_feeditemid&utm_device=c&utm_term=teamwork&utm_source=google&utm_medium=ppc&utm_campaign=Search-Brand-Tier1-US%2FCA&hsa_cam=10373784469&hsa_grp=109963102264&hsa_mt=e&hsa_src=g&hsa_ad=618332975179&hsa_acc=8707336165&hsa_net=adwords&hsa_kw=teamwork&hsa_tgt=kwd-11742321&hsa_ver=3&gclid=CjwKCAjw__ihBhADEiwAXEazJi32xyxhyPmUEMgXquCSStwy8VPvPH1cMdWITLb0cTfFKX-Qc_aHlhoC1P0QAvD_BwE',
         }
     ];
 
@@ -332,7 +334,8 @@ if (document.title === "Design") {
     var utilityData = [
         {
             'src': '../../assets/images/Teamwork-button-8.png',
-            'alt': 'Teamwork Button'
+            'alt': 'Teamwork Button',
+            'href': 'https://www.teamwork.com/try-now/project-management-software-demo/?ref=a_Search-Brand-Tier1-US%2FCA&adgroup=Brand%20-%20Exact%20Match&source_category=PPC&source_detail=Adwords&utm_feeditemid&utm_device=c&utm_term=teamwork&utm_source=google&utm_medium=ppc&utm_campaign=Search-Brand-Tier1-US%2FCA&hsa_cam=10373784469&hsa_grp=109963102264&hsa_mt=e&hsa_src=g&hsa_ad=618332975179&hsa_acc=8707336165&hsa_net=adwords&hsa_kw=teamwork&hsa_tgt=kwd-11742321&hsa_ver=3&gclid=CjwKCAjw__ihBhADEiwAXEazJi32xyxhyPmUEMgXquCSStwy8VPvPH1cMdWITLb0cTfFKX-Qc_aHlhoC1P0QAvD_BwE',
         }
     ];
 
@@ -566,7 +569,8 @@ if (document.title === "Human Resources") {
     var utilityData = [
         {
             'src': '../../assets/images/ADP-web-HR.png',
-            'alt': 'Visit ADP button'
+            'alt': 'Visit ADP button',
+            'href': 'https://online.adp.com/signin/v1/?APPID=RDBX&productId=80e309c3-70c6-bae1-e053-3505430b5495&returnURL=https://my.adp.com/&callingAppId=RDBX&TARGET=-SM-https://my.adp.com/static/redbox/',
         }
     ];
 
@@ -619,7 +623,8 @@ if (document.title === "Inventory Analysis") {
     var utilityData = [
         {
             'src': '../../assets/images/New Item Setup-Inventory.png',
-            'alt': 'New Item Setup Button'
+            'alt': 'New Item Setup Button',
+            'href': '../forms/itemrequest.html',
         }
     ];
 
@@ -759,6 +764,7 @@ if (document.title === "PPD") {
         {
             'src': '../../assets/images/Quote Request-Sourcing.png',
             'alt': 'Quote Request Button',
+            'href': '../forms/quote.html',
         },
         {
             'src': '../../assets/images/PPD Sample Button.png',
@@ -961,7 +967,8 @@ if (document.title === "Pratt Direct") {
     var utilityData = [
         {
             'src': '../../assets/images/Teamwork-button-8.png',
-            'alt': 'Teamwork Button'
+            'alt': 'Teamwork Button',
+            'href': 'https://www.teamwork.com/try-now/project-management-software-demo/?ref=a_Search-Brand-Tier1-US%2FCA&adgroup=Brand%20-%20Exact%20Match&source_category=PPC&source_detail=Adwords&utm_feeditemid&utm_device=c&utm_term=teamwork&utm_source=google&utm_medium=ppc&utm_campaign=Search-Brand-Tier1-US%2FCA&hsa_cam=10373784469&hsa_grp=109963102264&hsa_mt=e&hsa_src=g&hsa_ad=618332975179&hsa_acc=8707336165&hsa_net=adwords&hsa_kw=teamwork&hsa_tgt=kwd-11742321&hsa_ver=3&gclid=CjwKCAjw__ihBhADEiwAXEazJi32xyxhyPmUEMgXquCSStwy8VPvPH1cMdWITLb0cTfFKX-Qc_aHlhoC1P0QAvD_BwE',
         }
     ];
 
@@ -1028,7 +1035,7 @@ if (document.title === "Sourcing") {
         {
             'src': '../../assets/images/Quote Request-Sourcing.png',
             'alt': 'Quote Request Button',
-            'href': '../forms/quoterequest3.html'
+            'href': '../forms/quote.html',
         }
     ];
 

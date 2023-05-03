@@ -28,6 +28,11 @@ header img {
     padding: 1rem 2rem;
 }
 
+/* .btn-group {
+    background-color: lightgray;
+    padding: 1rem;
+} */
+
 .btn-group a img {
     margin: 0rem 0.8rem 1.5rem 1rem;
     transition-duration: 250ms;
