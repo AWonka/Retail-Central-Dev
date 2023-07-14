@@ -607,7 +607,6 @@ if (document.title === "Human Resources") {
 };
 
 // INVENTORY ANALYSIS
-// ...NEED CAPABILITIES BANNER
 if (document.title === "Inventory Analysis") {
     var bannersData = [
         {
@@ -689,7 +688,7 @@ if (document.title === "Logistics") {
             'alt': 'Inventory Analysis',
         },
         {
-            'src': '../../assets/images/inventory/Inventory-Capabilities-8.png',
+            'src': '../../assets/images/logistics/Logistics-capabilities.png',
             'alt': 'Inventory Analysis Capabilities'
         }
     ];
@@ -741,6 +740,56 @@ if (document.title === "Logistics") {
             'name': 'Jerome Payne',
             'email': 'jpayne@prattindustries.com',
             'title': 'Logistics Manager',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        }
+    ];
+};
+
+// PPD
+if (document.title === "Operations") {
+    var bannersData = [
+        {
+            'src': '../../assets/images/ppd/PPD-head-8.png',
+            'alt': 'PPD Header',
+        },
+        {
+            'src': '../../assets/images/ppd/PPD-Capabilities-8.png',
+            'alt': 'PPD Capabilities'
+        }
+    ];
+
+    var utilityData = [
+        {
+            'src': '../../assets/images/Quote Request-Sourcing.png',
+            'alt': 'Quote Request Button',
+            'href': '../forms/quote.html',
+        },
+        {
+            'src': '../../assets/images/PPD Sample Button.png',
+            'alt': 'PPD Sample Request Button'
+        }
+    ];
+
+    var employeeData = [
+        {
+            'name': 'Bob Feldman',
+            'email': 'bfeldman@prattindustries.com',
+            'title': 'PPD Manager',
+            'lead': true,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Ritchie Bell',
+            'email': 'rbell@prattindustries.com',
+            'title': 'Procurement Buyer',
+            'lead': false,
+            'img': '../../assets/images/Profile-place-holder-8.png',
+        },
+        {
+            'name': 'Bryan Smith',
+            'email': 'basmith@prattindustries.com',
+            'title': 'Data Analytics',
             'lead': false,
             'img': '../../assets/images/Profile-place-holder-8.png',
         }
@@ -850,11 +899,11 @@ if (document.title === "Quality") {
 if (document.title === "Research & Development") {
     var bannersData = [
         {
-            'src': '../../assets/images/qa/QC head.png',
+            'src': '../../assets/images/R&D/R&D head.png',
             'alt': 'Quality',
         },
         {
-            'src': '../../assets/images/qa/QC-Capabilities.png',
+            'src': '../../assets/images/R&D/R&D Capabilities.png',
             'alt': 'Quality Capabilities'
         }
     ];
